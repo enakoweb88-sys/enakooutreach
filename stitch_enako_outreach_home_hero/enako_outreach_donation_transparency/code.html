@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enako Outreach Donation Transparency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-white font-display antialiased">
+<div class="relative flex h-auto min-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Navbar placeholder -->
+<nav class="flex items-center justify-between px-10 py-6 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">public</span>
+</div>
+<span class="text-xl font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">Enako Outreach</span>
+</div>
+<div class="hidden md:flex gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Our Missions</a>
+<a class="hover:text-primary" href="#">Impact Reports</a>
+<a class="hover:text-primary" href="#">Get Involved</a>
+<a class="text-primary border-b-2 border-primary" href="#">Transparency</a>
+</div>
+<button class="bg-primary text-slate-900 font-bold px-6 py-2 rounded-full hover:brightness-110 transition-all">Donate Now</button>
+</nav>
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-40 flex flex-1 justify-center py-12 md:py-20">
+<div class="layout-content-container flex flex-col max-w-[1024px] flex-1">
+<!-- Section Header -->
+<div class="text-center mb-12">
+<h2 class="text-slate-900 dark:text-slate-100 text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-4">Our Commitment to Transparency</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+                        We believe that trust is the foundation of change. At Enako Outreach, we ensure that every contribution is maximized for on-the-ground impact.
+                    </p>
+</div>
+<!-- Main Transparency Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden mb-8">
+<div class="flex flex-col lg:flex-row">
+<!-- Donut Chart & Allocation -->
+<div class="flex-1 p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800">
+<div class="flex flex-col gap-6">
+<div class="flex flex-col">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-bold uppercase tracking-widest mb-1">Fund Allocation</p>
+<div class="flex items-end gap-3">
+<p class="text-slate-900 dark:text-slate-100 text-5xl font-extrabold leading-none tracking-tighter">85%</p>
+<p class="text-primary text-xl font-bold mb-1">Direct Impact</p>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-xs font-bold px-2 py-0.5 rounded-full">+5% vs 2023</span>
+<p class="text-slate-400 text-xs font-medium">Fiscal Year 2024</p>
+</div>
+</div>
+<!-- Custom Donut Chart Visualization -->
+<div class="relative w-full aspect-square max-w-[280px] mx-auto flex items-center justify-center mt-4">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background Circle -->
+<circle class="text-slate-100 dark:text-slate-800" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="12"></circle>
+<!-- Primary Data (85%) -->
+<circle class="text-primary" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="213.6 251.2" stroke-width="12"></circle>
+<!-- Admin Costs (15%) -->
+<circle class="text-slate-300 dark:text-slate-700" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="37.6 251.2" stroke-dashoffset="-213.6" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-1">favorite</span>
+<span class="text-slate-400 text-xs font-bold uppercase tracking-widest">Efficiency</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-slate-600 dark:text-slate-400 text-sm font-medium">Field Programs</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+<span class="text-slate-600 dark:text-slate-400 text-sm font-medium">Admin &amp; Ops</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Metrics Grid -->
+<div class="flex-1 p-8 lg:p-12 flex flex-col justify-center gap-8 bg-slate-50 dark:bg-slate-900/50">
+<div class="flex flex-col gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Communities Served</p>
+<div class="flex items-baseline gap-1">
+<p class="text-slate-900 dark:text-slate-100 text-4xl font-extrabold">120</p>
+<p class="text-primary text-xl font-bold">+</p>
+</div>
+<div class="w-full h-1 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="w-[85%] h-full bg-primary"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Active Projects</p>
+<div class="flex items-baseline gap-1">
+<p class="text-slate-900 dark:text-slate-100 text-4xl font-extrabold">45</p>
+<p class="text-primary text-xl font-bold">Programs</p>
+</div>
+<div class="w-full h-1 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="w-[70%] h-full bg-primary"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Verified Impact</p>
+<div class="flex items-baseline gap-1">
+<p class="text-slate-900 dark:text-slate-100 text-4xl font-extrabold">100%</p>
+<p class="text-primary text-xl font-bold">Traceable</p>
+</div>
+<div class="w-full h-1 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="w-full h-full bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50 group">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-slate-900 dark:text-slate-100 font-bold text-lg leading-tight">Transparency</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Full financial disclosure for every dollar received.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50 group">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-3xl">account_balance</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-slate-900 dark:text-slate-100 font-bold text-lg leading-tight">Accountability</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Quarterly independent audits and public reviews.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50 group">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-3xl">task_alt</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-slate-900 dark:text-slate-100 font-bold text-lg leading-tight">Verified Impact</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Measurable outcomes validated on the ground.</p>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="mt-16 text-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6 px-4">
+                        Enako Outreach ensures that every dollar contributes directly to sustainable development in Africa.<br class="hidden md:block"/>
+                        Download our <a class="text-primary font-bold hover:underline" href="#">2023 Annual Impact Report</a> to see detailed case studies.
+                    </p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-primary text-slate-900 font-bold px-10 py-4 rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-all">Support Our Mission</button>
+<button class="bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 font-bold px-10 py-4 rounded-xl hover:bg-slate-50 transition-all">View Active Projects</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Visualization Section -->
+<div class="w-full bg-slate-100 dark:bg-slate-800/50 py-16">
+<div class="max-w-[1024px] mx-auto px-4 text-center">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8">Our Presence in the Field</h3>
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-inner">
+<img alt="Map showing Enako impact across Africa" class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" data-alt="Map showing Enako impact across Africa" data-location="Africa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUTWH1Cfb3AZzon_RZMxZ44axOqg2aq_c3OnNe8tiCBHlS9YDDluHJwZ3SllU1KWQczk4rC1FscnCyCMzCfbcnLgY4RAiunziLZ6ew11VMwXU0c0ohmj7ssfp59ee1e7dSAO7L_5L8yTySyU7asGV2qsijgPEqbaeTSajAmf3h_kwZ_LYEoHt7ZpTggjMCmf0W5cr4gmnoHZhGGS2s6wI56XrABgdPJcmaOdl9hP7r7ju0U2x5mf9BKQdN7oMJQL-D8bNBbe9_ZUY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-100/80 dark:from-slate-800/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-left">
+<p class="text-slate-900 dark:text-slate-100 font-bold text-lg">Operations Center</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm">Nairobi, Kenya &amp; Lagos, Nigeria</p>
+</div>
+</div>
+</div>
+</div>
+<footer class="bg-white dark:bg-background-dark py-12 px-10 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-[1024px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">public</span>
+</div>
+<span class="text-lg font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">Enako Outreach</span>
+</div>
+<p class="text-slate-500 text-xs">© 2024 Enako Outreach Foundation. Registered 501(c)(3) nonprofit.</p>
+</div>
+<div class="flex gap-6 text-slate-400">
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

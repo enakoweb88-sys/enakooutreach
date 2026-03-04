@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Enako Outreach | Donation</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen flex-col">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">diversity_3</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Enako Outreach</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Our Work</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Projects</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Impact Report</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">Login</button>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold shadow-sm shadow-primary/20 transition-all">
+                        Support Us
+                    </button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center py-12 px-6">
+<div class="w-full max-w-2xl bg-white dark:bg-slate-900 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 overflow-hidden">
+<!-- Hero Image/Graphic for context -->
+<div class="h-48 relative overflow-hidden">
+<img alt="Education in Africa" class="w-full h-full object-cover" data-alt="Happy children learning in a bright African classroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7RrYaoIqLxv4D9gHZrsd7zZYiXpFlXwp2_tt2EU9OUCCTif2dv5YL7skcJJfMgzShZYU8nBGs8kNX8qheQnHRQjrPQ0HOxtS5NKDNb9dvqmIIsvMAHVnIFWfrB_P_wcCiZ4VAA5E-cVISbSoa8-5ExVIHRiZZOoekakzRtZrv_AK3lH_SvTNse6_r5ImL2saEepigh4w7Y2bKpnqPpzoOauUMvI5ipyqHWO05MhRJT9zImzhAuajD0RkJQSB4w1SJi8qgHen8QnM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white dark:from-slate-900 to-transparent"></div>
+</div>
+<div class="px-8 pb-10 pt-4 text-center">
+<h1 class="text-3xl font-extrabold tracking-tight mb-3">Empower Communities in Africa</h1>
+<p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto mb-8">
+                        Your contribution provides quality education, clean water, and sustainable development tools for a brighter future.
+                    </p>
+<!-- Frequency Toggle -->
+<div class="inline-flex p-1.5 bg-slate-100 dark:bg-slate-800 rounded-xl mb-8 w-full max-w-xs mx-auto">
+<label class="flex-1 cursor-pointer group">
+<input checked="" class="hidden peer" name="frequency" type="radio"/>
+<div class="py-2.5 rounded-lg text-sm font-semibold text-slate-500 peer-checked:bg-white peer-checked:text-primary peer-checked:shadow-sm transition-all text-center">
+                                One-time
+                            </div>
+</label>
+<label class="flex-1 cursor-pointer group">
+<input class="hidden peer" name="frequency" type="radio"/>
+<div class="py-2.5 rounded-lg text-sm font-semibold text-slate-500 peer-checked:bg-white peer-checked:text-primary peer-checked:shadow-sm transition-all text-center flex items-center justify-center gap-1">
+                                Monthly
+                                <span class="material-symbols-outlined text-[14px]">favorite</span>
+</div>
+</label>
+</div>
+<!-- Preset Amounts Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+<button class="h-16 flex flex-col items-center justify-center rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-primary/50 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all group">
+<span class="text-xl font-bold">$10</span>
+<span class="text-[10px] text-slate-400 group-hover:text-primary uppercase tracking-wider font-semibold">Starter</span>
+</button>
+<button class="h-16 flex flex-col items-center justify-center rounded-xl border-2 border-primary bg-primary/5 text-primary transition-all">
+<span class="text-xl font-bold">$25</span>
+<span class="text-[10px] uppercase tracking-wider font-semibold">Advocate</span>
+</button>
+<button class="h-16 flex flex-col items-center justify-center rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-primary/50 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all group">
+<span class="text-xl font-bold">$50</span>
+<span class="text-[10px] text-slate-400 group-hover:text-primary uppercase tracking-wider font-semibold">Hero</span>
+</button>
+<button class="h-16 flex flex-col items-center justify-center rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-primary/50 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all group">
+<span class="text-xl font-bold">$100</span>
+<span class="text-[10px] text-slate-400 group-hover:text-primary uppercase tracking-wider font-semibold">Partner</span>
+</button>
+</div>
+<!-- Custom Amount Input -->
+<div class="relative mb-10">
+<div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+<span class="text-slate-400 font-bold text-lg">$</span>
+</div>
+<input class="block w-full h-14 pl-10 pr-4 bg-slate-50 dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary text-lg font-bold placeholder:text-slate-400 placeholder:font-normal" placeholder="Other amount" type="number"/>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white h-14 rounded-xl text-lg font-bold shadow-lg shadow-primary/20 transition-all transform active:scale-[0.98] mb-6">
+                        Complete Donation
+                    </button>
+<div class="flex items-center justify-center gap-6 text-slate-400">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="text-xs font-medium">Secure SSL</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span class="text-xs font-medium">Bank Level Security</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Info -->
+<footer class="py-8 text-center">
+<p class="text-xs text-slate-400 px-6">
+                Enako Outreach is a registered 501(c)(3) non-profit organization. Your donation is tax-deductible to the extent allowed by law.
+            </p>
+</footer>
+</div>
+</body></html>

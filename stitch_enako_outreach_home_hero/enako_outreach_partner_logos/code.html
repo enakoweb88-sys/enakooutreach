@@ -1,0 +1,152 @@
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .logo-grayscale {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        .logo-grayscale:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-100 dark:border-slate-800 px-10 py-4 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined text-3xl">public</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">Enako Outreach</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Our Impact</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Programs</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Partnerships</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Transparency</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90">
+                            Donate Now
+                        </button>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold transition-all hover:bg-slate-200">
+                            Contact
+                        </button>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Partners Section -->
+<section class="py-24 px-10 bg-white dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto text-center">
+<h2 class="text-[#0F172A] dark:text-white text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                            Working Together for Greater Impact
+                        </h2>
+<p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-16">
+                            We collaborate with international institutions, local governments, and global foundations to deliver sustainable change across the continent.
+                        </p>
+<!-- Logo Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 items-center justify-items-center">
+<!-- Global Education Fund -->
+<div class="w-full flex justify-center items-center p-4">
+<img class="logo-grayscale max-h-12 w-auto object-contain cursor-pointer" data-alt="Logo of the Global Education Fund foundation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPsWI18cMI5N2QR35B5dQPi8fViUlQrdeG2L8hLRp5CLhA64AqxelTGFJc2-cfPrpX5gaXcWaq5FdMqRBDaBlxkPUGfeUR3nTPOzsjt8Kwt6rOEAeMHYNvwcQ1yunajjBX2M--5ZpJbnkMttqDtS1kS2gw5Uur9stVSk_dmhPh6uqoUn9zE_Z_3rlPkAn26E8RABAu111IltVRkw_LIifHtHRSWBUEk5Wg9NdFSw7aY5hiD5xYZJLxGOKjMcPJ3RnZUpp0f8eYk1w"/>
+</div>
+<!-- African Development Bank Style -->
+<div class="w-full flex justify-center items-center p-4">
+<img class="logo-grayscale max-h-12 w-auto object-contain cursor-pointer" data-alt="Logo of the Africa Development Partners group" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFR0QTKvNV4GOw9sX-n_9mIqckE3jMKgSzq08SURTaH69Jp50VgosTp3u5NzSGM2LAHmUvJxjD9oh3-HXPYS2FJyf8PnZg-uJrwFHcGj0F2IFlelkJsmQHOHdr5z69FkIZeLa0B_Jdf1NCHYzJgWZ88hHsjvo1njVNIWxmdFSoepBlKWYnc0z3246U6qDKiYnciWJTU6qjWB8vtjxc-wR4HLEJ0FIxSB2mkHYoc4bssx3EXFa05jY087xbs5V0phA8kPNwb-4Olcw"/>
+</div>
+<!-- Literacy Worldwide -->
+<div class="w-full flex justify-center items-center p-4">
+<img class="logo-grayscale max-h-10 w-auto object-contain cursor-pointer" data-alt="Logo of the Literacy Worldwide organization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqUI7Nsy_NUrIR9ucG4uQxu06L2x_jP-BNwRSTUDZ-ZeTonML2YpUc2eU_mZfgqvDY1keTRrrd_e3p2jA4BNjxZA7ejHmhSEo5RHE0jAphDghefQb3JRtRGUBAq6QwS7CIsbac2dqxSyhluiqLZ78saU9ql8wCvLBG9WdEKsOywvU9vwx1YRfQnhpNVlvtDe6kbq8t68rKLkGHP6oRxGGHN2A9v1ql2Ef0y_5hQ45odn_gXopKzazEQjJg1-tLyCq-72oq9GXE6a4"/>
+</div>
+<!-- Sustainable Communities -->
+<div class="w-full flex justify-center items-center p-4">
+<img class="logo-grayscale max-h-12 w-auto object-contain cursor-pointer" data-alt="Logo of the Sustainable Communities network" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAarHAmNpxZTqg6fu3ITcmZPHD019v-17BOWE4s4TkTYBHsam78WDG0JZujrfXzYeAT3nqfDJi-hgRO0pZyWblPvtTPk-hcKoQzQRYsnXEz20PELbUyeI63zl-OaXF9VCqQPUCF7yA20wEC7DhoAG4uC_RHd-WoX3mgktFcRigkECZAxvIxOCB0nu_GK7IKyCMfc_tQE2lvkqpa1-ZFWj-RgQw0YrX0PAdZr8P2tZNRgn7LMNd5IbAhYwo74OfF56DHgYGBFM4jQUY"/>
+</div>
+<!-- Unity Foundation -->
+<div class="w-full flex justify-center items-center p-4">
+<img class="logo-grayscale max-h-12 w-auto object-contain cursor-pointer" data-alt="Logo of the Unity Philanthropic Foundation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVpa7ZnS2z9EagngXobl8OOAK3KDA7KCOXqxaBU2qGxZXvsH5nUacCSgDD76os8U6L7WwaU_FO1hNPxOG4OzPwq80oDeUOVR1Dj6HqsAT8VrsgvfWUGItFv6O3Nb96LMmjwD7s3pN_u4smX12GuArXVw91tUt-4ZLL5muPu7Ie9FoMj5pKqfk7NwSjp-cPUgASi7CWeJxau28BXuAoa3Dm3uwpI5ZBDjijMkt1V8V5gTWVWrV3Or0cZp3FFY9xAb7hO0V1JF7PcPU"/>
+</div>
+<!-- Heritage Trust -->
+<div class="w-full flex justify-center items-center p-4">
+<img class="logo-grayscale max-h-10 w-auto object-contain cursor-pointer" data-alt="Logo of the African Heritage Trust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuiyCbI-hAPetHNTnNmwmzBsyz1tFlmY5aINhBofjrNlCnoMLX8E9SV-0h8Jg4arDkCk27bLI9Ikpo8qKRjUBpw5pvRqCUBlpqMNGvUVR6zaJNzKaSQPe8tokGdBaRa_dwy1b1I7E0642s8F3fzT9GA6lN_l46mbMLWkBOntMj5IoFPlhogY0SeChOja7VRzGp2LfzeW4YA75nTCgB9Pjdb9KxyYCgJWeIDx_E4Z2l_diKVBnwu3lCCFfLHu0LaZMYv0flGfQONMo"/>
+</div>
+</div>
+<div class="mt-20">
+<button class="inline-flex items-center gap-2 text-primary font-bold hover:underline decoration-2 underline-offset-4">
+<span>View all 24 partners</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Call to Action Section -->
+<section class="py-20 px-10 bg-slate-50 dark:bg-slate-900/50">
+<div class="max-w-[800px] mx-auto text-center flex flex-col items-center gap-6">
+<h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">Become a Partner</h3>
+<p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+                            Join our mission to empower communities through education and development. Together, we can create scalable solutions for the future.
+                        </p>
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-bold text-lg transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                            Get in Touch
+                        </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col gap-10 px-10 py-16 bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800">
+<div class="max-w-[1200px] mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">public</span>
+<span class="font-bold text-lg">Enako Outreach</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors" href="#">Annual Report 2023</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors" href="#">Media Kit</a>
+</div>
+<div class="flex gap-5">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+</div>
+</div>
+<div class="text-center">
+<p class="text-slate-400 text-sm">© 2024 Enako Outreach Foundation. Registered Non-Profit. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

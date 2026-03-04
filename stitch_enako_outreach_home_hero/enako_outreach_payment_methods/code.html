@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enako Outreach - Payment Methods</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        [type='radio']:checked {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-40 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined">diversity_3</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">Enako Outreach</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-10 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-semibold" href="#">Our Impact</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-semibold" href="#">Projects</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-semibold" href="#">About</a>
+</nav>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-11 px-5 bg-primary text-slate-900 text-sm font-bold shadow-sm hover:bg-primary/90 transition-all">
+<span>Donate Now</span>
+</button>
+<div class="bg-slate-200 dark:bg-slate-700 rounded-full size-10 flex items-center justify-center overflow-hidden border-2 border-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a professional male smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA37hfi8aHhRaY4QzPB-CaS8yDKJqy2VnTYiIt52uBX-d-zK8jvLDxWcYq7CwxDjQHIf2NlY3UwrDdJ2j_QdfMid67Zy_K4UIJSHXa3EkvoAU-s_qi50vDXqdUNP0_XMdJXZVgYNKMVru7TdlboVT0HFalPcYG8Bfdu_Eok5ZX25vFGMPTlydwsfUYiXSuxSZNu2DE-CHGUX1AX628_v60fVltl7FYTw45H88o1tuXj6Eo43I2vC-yPoUnMxzF20ZYHeY50vDRUfxY"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-start py-12 px-4">
+<div class="layout-content-container flex flex-col max-w-[800px] w-full bg-white dark:bg-slate-900 shadow-xl rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Step Header -->
+<div class="p-8 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-primary text-xs font-bold uppercase tracking-widest">Step 2 of 3</span>
+</div>
+<h1 class="text-slate-900 dark:text-white text-3xl font-extrabold leading-tight tracking-tight">Select Payment Method</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base mt-2">Empowering education and development across Africa through your generous support.</p>
+</div>
+<!-- Payment Options -->
+<div class="flex flex-col gap-4 p-8">
+<!-- Credit Card -->
+<label class="group relative flex items-center gap-5 rounded-xl border-2 border-slate-200 dark:border-slate-700 p-6 cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-all">
+<input checked="" class="h-6 w-6 border-2 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-2 checked:bg-primary checked:border-primary" name="payment_method" type="radio"/>
+<div class="flex grow flex-col">
+<div class="flex items-center gap-2">
+<span class="text-slate-900 dark:text-white text-lg font-bold leading-normal">Credit / Debit Card</span>
+<div class="flex gap-1 ml-2">
+<span class="material-symbols-outlined text-slate-400 text-xl">credit_card</span>
+</div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Visa, Mastercard, American Express, or Discovery</p>
+</div>
+<div class="flex gap-2">
+<div class="h-6 w-10 bg-slate-100 dark:bg-slate-800 rounded flex items-center justify-center text-[8px] font-bold text-slate-400">VISA</div>
+<div class="h-6 w-10 bg-slate-100 dark:bg-slate-800 rounded flex items-center justify-center text-[8px] font-bold text-slate-400">MC</div>
+</div>
+</label>
+<!-- Mobile Money -->
+<label class="group relative flex items-center gap-5 rounded-xl border-2 border-slate-200 dark:border-slate-700 p-6 cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-all">
+<input class="h-6 w-6 border-2 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-2 checked:bg-primary checked:border-primary" name="payment_method" type="radio"/>
+<div class="flex grow flex-col">
+<div class="flex items-center gap-2">
+<span class="text-slate-900 dark:text-white text-lg font-bold leading-normal">Mobile Money</span>
+<span class="material-symbols-outlined text-slate-400 text-xl">smartphone</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">M-Pesa, MTN MoMo, Orange Money, or Airtel Money</p>
+</div>
+<div class="flex -space-x-2">
+<div class="h-8 w-8 rounded-full bg-primary/20 border-2 border-white dark:border-slate-900 flex items-center justify-center text-[6px] font-bold">MP</div>
+<div class="h-8 w-8 rounded-full bg-yellow-400/20 border-2 border-white dark:border-slate-900 flex items-center justify-center text-[6px] font-bold">MTN</div>
+</div>
+</label>
+<!-- Bank Transfer -->
+<label class="group relative flex items-center gap-5 rounded-xl border-2 border-slate-200 dark:border-slate-700 p-6 cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-all">
+<input class="h-6 w-6 border-2 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-2 checked:bg-primary checked:border-primary" name="payment_method" type="radio"/>
+<div class="flex grow flex-col">
+<div class="flex items-center gap-2">
+<span class="text-slate-900 dark:text-white text-lg font-bold leading-normal">Bank Transfer</span>
+<span class="material-symbols-outlined text-slate-400 text-xl">account_balance</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Direct wire transfer to our foundation's registered accounts</p>
+</div>
+</label>
+</div>
+<!-- Footer Visuals & Security -->
+<div class="bg-slate-50 dark:bg-slate-800/30 p-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="relative rounded-xl overflow-hidden aspect-video shadow-md">
+<img alt="Education Impact" class="w-full h-full object-cover" data-alt="Children in an African classroom smiling together" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-qRB0d0idynK2vaEPtVIXwx94TY3hApD_1RtGXiYw4r-w3a9bGupSML71hpegE2az2yD8xBKIEgPc0j1TBA78H3i5U0eBa4kWnZpQzIJPYgo_3ScbOpkmgp7_kokRHTgI_RRT0tSUh9YAaLJR-neWgNDX93R8jrlTvrIJUfMUN4rpRsvEaHoBGcfspLICvBa_0XuMDHDLsVB8flWHgvoXoINgU1-VOsqvhwW80UGdLbgNf-og2hFZvY1BaqCXrfm_FSpk7QURR_Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<p class="text-white text-xs font-medium">Your contribution funds rural schools</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden aspect-video shadow-md">
+<img alt="Community Support" class="w-full h-full object-cover" data-alt="Community leaders shaking hands in a bright outdoor setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeVmYRVcZOh5aOwAsXHTv76SkXERVCjt69VIhmnBItmtsttVc7msn8Q8jnTxM98IXpg3oMuHQezNVlJq07b0mOZefbDzcv6z2Serrqx_k_ZZtFz9hjH3p3pQnZxzG6waG8jojqye0fHt-AWysFJunXz6VowGZUeMoFKAc1RlMcFSSZGvLv4Z8cc4POGBSUsK_AhrvmAMmDN6RlxMrA7x3Osowr4iO3F9a5u-0i0sZ8dJCJBgL21crLGgtsvayzoMc_wpTVFBpvqy0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<p class="text-white text-xs font-medium">Support community infrastructure</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center gap-4 border-t border-slate-200 dark:border-slate-700 pt-8">
+<div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-emerald-500 text-xl">lock</span>
+<span class="text-sm font-semibold tracking-tight">Your donation is encrypted and secure.</span>
+</div>
+<p class="text-slate-400 dark:text-slate-500 text-xs text-center max-w-md">
+                            Enako Outreach uses industry-standard 256-bit SSL encryption to ensure your personal and payment data is protected. Registered Charity #44029-AF.
+                        </p>
+<button class="w-full bg-primary py-4 rounded-xl text-slate-900 font-bold text-lg shadow-lg hover:brightness-105 transition-all mt-4">
+                            Proceed to Secure Payment
+                        </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto py-10 px-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-primary">diversity_3</span>
+<span class="text-sm font-bold">Enako Outreach</span>
+</div>
+<div class="flex gap-8 text-xs font-medium text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Tax Receipts</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+<div class="text-xs text-slate-400">
+                    © 2024 Enako Outreach Foundation. All rights reserved.
+                </div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

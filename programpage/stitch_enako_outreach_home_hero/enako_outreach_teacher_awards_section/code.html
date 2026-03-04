@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#479eeb",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a21",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-3 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-8 flex items-center justify-center bg-primary text-white rounded-lg">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">Enako Outreach</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Programs</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Awards</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Donate</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Partner With Us</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-slate-200" data-alt="User profile avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFrWrVv6fQb9KBdWtmXn65O84Hr9iERVlKmyn9w0QEsdtS-jJVv-aDV27aD1mz_0Ue3cxa-26H9rc5jA-Yi1R-f-2rfBqDR2FAYH3Mz3rE5eNoV-q33hhwM28xrX8TE8eYRD_e4YllWBwyp3trIVWVzGHWje9_jXBnZ8t3TDntQhGy0PPL4OHcB6NzpailEgeA8qd-ERWtius39kMJreGQ24UO6DRM8V-cH-6wP8tEltpAxfUxNrqepn9-vkwDRz7IVis4yUKUXP4");'></div>
+</div>
+</header>
+<main class="flex flex-col flex-1">
+<section class="max-w-7xl mx-auto px-10 py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold w-fit">
+<span class="material-symbols-outlined text-sm">workspace_premium</span>
+                            Teacher Excellence Awards
+                        </div>
+<h1 class="text-slate-900 dark:text-slate-100 tracking-light text-[42px] font-black leading-tight">
+                            Honoring the Heroes of African Classrooms
+                        </h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-relaxed">
+                            The Enako Teacher Excellence Awards recognize educators who go above and beyond to transform lives through education. We celebrate those who demonstrate exceptional commitment to student growth and regional community development.
+                        </p>
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-3">
+<div class="mt-1 flex-shrink-0 size-6 flex items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Pedagogical Innovation</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Rewarding creative teaching methods that engage students effectively.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="mt-1 flex-shrink-0 size-6 flex items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Community Leadership</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Recognizing teachers who act as pillars of growth in their local areas.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="mt-1 flex-shrink-0 size-6 flex items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Student Empowerment</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Focusing on measurable impact on student academic and personal success.</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 pt-4">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold transition-all hover:shadow-lg">
+                                Nominate a Teacher
+                            </button>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 text-base font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                View Past Winners
+                            </button>
+</div>
+</div>
+<div class="relative">
+<div class="w-full aspect-[4/5] bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden shadow-2xl relative">
+<img alt="African teacher laughing with children" class="w-full h-full object-cover" data-alt="African teacher laughing with young students in classroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbzuVTwVuK3tcocbQXUxVPiR8QrHGlpp4QQCIpHucaPSZNIB-nha4ws6D_Gh4e9Tc8qhvzbb5l28PV9nxLcL5RK-sYaRoHYMN3ZtulXFBQN772yrqGBhbnju_a5vPxp5_5waNX8PcFCCMtJKlC4sYQiydd33qLTNV6SKz_dtJYo5rcrLg55lASKXRZy4GAUpEqts_UMmaiqxVLUlnzmRz2tu9i8lgOvTU9zrGL0AuC3cA1z2nC5X7EwZhg23vbj2o5AH0W2YOp7Js"/>
+</div>
+<div class="absolute -bottom-6 -left-10 bg-white dark:bg-background-dark p-6 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 max-w-[280px]">
+<h5 class="text-primary font-bold text-sm uppercase tracking-wider mb-4">Excellence Package</h5>
+<ul class="flex flex-col gap-3">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">payments</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">$5,000 Research Grant</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Global Certification</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">laptop_mac</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Full Digital Classroom Kit</span>
+</li>
+</ul>
+</div>
+<div class="absolute -top-6 -right-6 bg-primary p-4 rounded-xl text-white shadow-lg animate-bounce-slow">
+<div class="flex flex-col items-center">
+<span class="text-3xl font-black">500+</span>
+<span class="text-[10px] font-bold uppercase">Impacted Lives</span>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-slate-900/50 py-16 border-y border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-10">
+<div class="flex justify-between items-end mb-10">
+<div class="max-w-xl">
+<h2 class="text-slate-900 dark:text-slate-100 text-3xl font-bold mb-4">Impact Snapshot</h2>
+<p class="text-slate-600 dark:text-slate-400">Our awards program provides more than just recognition; it's a platform for sustainable educational development across the continent.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-slate-100 dark:border-slate-800 group hover:border-primary transition-colors">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">diversity_3</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">15 Regions Covered</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Spanning from rural communities in East Africa to burgeoning urban centers in the West, we find excellence everywhere.</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-slate-100 dark:border-slate-800 group hover:border-primary transition-colors">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">model_training</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Professional Training</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Winners receive access to exclusive masterclasses with international pedagogy experts to sharpen their skills.</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-slate-100 dark:border-slate-800 group hover:border-primary transition-colors">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">volunteer_activism</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Sustainable Support</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Ongoing mentorship programs for all nominees to build a community of practice among elite African educators.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-10 py-20 text-center">
+<div class="bg-primary/5 rounded-3xl p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-10 opacity-10">
+<span class="material-symbols-outlined text-[120px] text-primary">award_star</span>
+</div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-4xl font-black text-slate-900 dark:text-white mb-6">Nominate a Local Hero</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg mb-8">Do you know a teacher who is changing the world, one student at a time? Help us recognize their tireless efforts and provide them with the tools they need to do even more.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-primary text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-primary/30 hover:translate-y-[-2px] transition-all">
+                                    Start Nomination Form
+                                </button>
+<button class="bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold px-8 py-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+                                    Download Criteria (PDF)
+                                </button>
+</div>
+<p class="mt-6 text-sm text-slate-500">Nominations for the 2024 cycle close on December 15th.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-slate-900 text-slate-400 py-12 px-10 border-t border-slate-800">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-white mb-6">
+<span class="material-symbols-outlined text-primary">school</span>
+<span class="text-xl font-bold">Enako Outreach</span>
+</div>
+<p class="text-sm leading-relaxed">Empowering the next generation of African leaders through quality education and teacher support systems.</p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Programs</h4>
+<ul class="flex flex-col gap-3 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Teacher Excellence</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">School Infrastructure</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Student Scholarships</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Digital Literacy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Foundation</h4>
+<ul class="flex flex-col gap-3 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Our Mission</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Transparency Report</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Partnerships</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Contact</h4>
+<ul class="flex flex-col gap-3 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> contact@enako.org</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Nairobi, Kenya</li>
+</ul>
+<div class="flex gap-4 mt-6">
+<div class="size-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-lg">public</span>
+</div>
+<div class="size-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-lg">share</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-xs flex justify-between">
+<p>© 2024 Enako Outreach Foundation. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

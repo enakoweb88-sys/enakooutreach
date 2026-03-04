@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#25bdf8",
+              "background-light": "#f5f7f8",
+              "background-dark": "#0f1d23",
+              "navy-deep": "#111618",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<title>Enako Outreach Impact Dashboard</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-10 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3 text-navy-deep dark:text-white">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-4xl">diversity_3</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">Enako Outreach</h2>
+</div>
+<nav class="flex flex-1 justify-end gap-8 items-center">
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Our Work</a>
+<a class="text-slate-900 dark:text-white text-sm font-bold border-b-2 border-primary leading-normal" href="#">Impact</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Donate</a>
+</div>
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-full h-11 px-6 bg-primary text-navy-deep text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                Partner With Us
+            </button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile representative avatar icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbL25mglsbxbP_OcG478dGPxy9UTp2E1SNBQktuB1B_J-KftrqhNR1D9JXV99BJztrX0judsX70tp4e751XB27ypD7EDov_gRd2cwUifVmlYDYkSMTmEmWpXpm954TqnW-Q_ly12eQzYtIOB_OEQ5FYN3H-_bvE73mfJddYA_tOQWCr-qX2RZ3bnnlOsAuQDsqaW6FDFz50xK2hEBYHzeF8VGFY2hfaoSO8KmWB5a7KFLVvzJ6O606Z-Fb5TpMvcM8uzKYkoehgsA")'></div>
+</nav>
+</header>
+<main class="flex-1 flex flex-col items-center w-full max-w-[1280px] mx-auto px-6 lg:px-10 py-16">
+<!-- Hero Section for Dashboard -->
+<div class="w-full text-center mb-16 space-y-4">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest">Global Humanitarian Impact</span>
+<h1 class="text-navy-deep dark:text-white text-5xl md:text-6xl font-black leading-tight tracking-tight">
+                Our Real-World <span class="text-primary">Change</span>
+</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+                Transparency is at the heart of our mission. Every contribution fuels measurable progress in education and community development across Africa.
+            </p>
+</div>
+<!-- Impact Grid (4-column horizontal) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full mb-20">
+<!-- Counter 1 -->
+<div class="group flex flex-col items-center justify-center p-10 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+<div class="mb-6 text-slate-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-5xl">school</span>
+</div>
+<div class="flex items-center gap-1 mb-2">
+<span class="text-navy-deep dark:text-white text-5xl font-black tracking-tighter">12,500</span>
+<span class="text-primary text-4xl font-bold">+</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 font-medium text-sm uppercase tracking-widest">Students Supported</p>
+</div>
+<!-- Counter 2 -->
+<div class="group flex flex-col items-center justify-center p-10 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+<div class="mb-6 text-slate-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-5xl">rewarded_ads</span>
+</div>
+<div class="flex items-center gap-1 mb-2">
+<span class="text-navy-deep dark:text-white text-5xl font-black tracking-tighter">450</span>
+<span class="text-primary text-4xl font-bold">+</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 font-medium text-sm uppercase tracking-widest">Teachers Rewarded</p>
+</div>
+<!-- Counter 3 -->
+<div class="group flex flex-col items-center justify-center p-10 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+<div class="mb-6 text-slate-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-5xl">location_city</span>
+</div>
+<div class="flex items-center gap-1 mb-2">
+<span class="text-navy-deep dark:text-white text-5xl font-black tracking-tighter">85</span>
+<span class="text-primary text-4xl font-bold">+</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 font-medium text-sm uppercase tracking-widest">Communities Helped</p>
+</div>
+<!-- Counter 4 -->
+<div class="group flex flex-col items-center justify-center p-10 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+<div class="mb-6 text-slate-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-5xl">fact_check</span>
+</div>
+<div class="flex items-center gap-1 mb-2">
+<span class="text-navy-deep dark:text-white text-5xl font-black tracking-tighter">120</span>
+<span class="text-primary text-4xl font-bold">+</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 font-medium text-sm uppercase tracking-widest">Projects Completed</p>
+</div>
+</div>
+<!-- Growth & Detail Visualization -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+<!-- Growth Chart Module -->
+<div class="flex flex-col gap-6 rounded-xl bg-white dark:bg-slate-900/50 p-8 border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider mb-1">Impact Scaling</p>
+<h3 class="text-navy-deep dark:text-white text-2xl font-bold tracking-tight">Annual Support Growth</h3>
+</div>
+<div class="text-right">
+<p class="text-primary text-3xl font-black leading-tight">+45%</p>
+<p class="text-emerald-500 text-xs font-bold">+12% vs last year</p>
+</div>
+</div>
+<div class="flex items-end justify-between h-48 px-2 pt-4">
+<div class="flex flex-col items-center gap-2 w-full group">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 30%;">
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors"></div>
+</div>
+<p class="text-slate-400 text-xs font-bold">2020</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-full group">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 55%;">
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors"></div>
+</div>
+<p class="text-slate-400 text-xs font-bold">2021</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-full group">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 45%;">
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors"></div>
+</div>
+<p class="text-slate-400 text-xs font-bold">2022</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-full group">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 85%;">
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors"></div>
+</div>
+<p class="text-slate-400 text-xs font-bold">2023</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-full group">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 100%;">
+<div class="absolute inset-0 bg-primary transition-colors"></div>
+</div>
+<p class="text-navy-deep dark:text-white text-xs font-bold">2024</p>
+</div>
+</div>
+</div>
+<!-- Completion Efficiency Module -->
+<div class="flex flex-col gap-6 rounded-xl bg-white dark:bg-slate-900/50 p-8 border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider mb-1">Operational Health</p>
+<h3 class="text-navy-deep dark:text-white text-2xl font-bold tracking-tight">Project Completion Rate</h3>
+</div>
+<div class="text-right">
+<p class="text-primary text-3xl font-black leading-tight">98%</p>
+<p class="text-emerald-500 text-xs font-bold">Optimal Performance</p>
+</div>
+</div>
+<div class="flex-1 min-h-[160px] py-4">
+<svg class="overflow-visible" fill="none" height="120" preserveaspectratio="none" viewbox="0 0 400 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="impact-gradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#25bdf8" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#25bdf8" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 80 Q 50 20, 100 60 T 200 40 T 300 90 T 400 20 L 400 120 L 0 120 Z" fill="url(#impact-gradient)"></path>
+<path d="M0 80 Q 50 20, 100 60 T 200 40 T 300 90 T 400 20" stroke="#25bdf8" stroke-linecap="round" stroke-width="4"></path>
+<circle cx="400" cy="20" fill="#25bdf8" r="6" stroke="white" stroke-width="2"></circle>
+</svg>
+<div class="flex justify-between mt-6">
+<p class="text-slate-400 text-[11px] font-bold tracking-widest uppercase">Jan</p>
+<p class="text-slate-400 text-[11px] font-bold tracking-widest uppercase">Mar</p>
+<p class="text-slate-400 text-[11px] font-bold tracking-widest uppercase">May</p>
+<p class="text-slate-400 text-[11px] font-bold tracking-widest uppercase">Jul</p>
+<p class="text-slate-400 text-[11px] font-bold tracking-widest uppercase">Sep</p>
+<p class="text-slate-400 text-[11px] font-bold tracking-widest uppercase">Nov</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Regional Impact Map Placeholder (Generic) -->
+<div class="w-full mt-20 relative overflow-hidden rounded-xl bg-navy-deep aspect-[21/9] flex items-center justify-center group">
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/30 via-navy-deep to-navy-deep"></div>
+<div class="absolute inset-0" data-alt="Monochrome stylized map of African continent regions" data-location="Africa" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDI36dZk3o8pFm81RpiydOkx4W5qB-beBt6-KaRy0a6iKfXTLJZVG-Nc_-yXlBnJ-b1PuZqmVZ2J4n_T3hBOamL-IC4NjdtAxB6HfS3ijTKY8o134I-SEXe2kRknzxglVcgfTZzKPkBEbde8fDlhiRpwaM4BOul5_n1FJdlv5qIhP3jiQAC6rG_B51VrO9IBA_-qubCAoqImZ_64HTishR5ZZXQFwCf2sHy6jMWiyC4Nsjcfpo4sawTdvatMoF2Avw4zaVnyyupRd8'); background-size: cover; background-position: center; filter: grayscale(100%) contrast(150%);"></div>
+<div class="relative z-10 text-center px-6">
+<h3 class="text-white text-3xl font-bold mb-4">Expanding our footprint across the continent</h3>
+<button class="px-8 py-3 bg-white text-navy-deep font-bold rounded-full hover:bg-primary hover:text-white transition-all transform group-hover:scale-105">View Local Project Details</button>
+</div>
+</div>
+</main>
+<footer class="w-full bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800 py-12">
+<div class="max-w-[1280px] mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-2xl">diversity_3</span>
+<span class="font-bold">Enako Outreach Foundation</span>
+</div>
+<p class="text-slate-400 text-sm">© 2024 Enako Outreach. All initiatives are community-driven and verified.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">campaign</span></a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

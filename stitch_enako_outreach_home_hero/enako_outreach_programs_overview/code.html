@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3abff8",
+              "background-light": "#f5f7f8",
+              "background-dark": "#101d23",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<title>Enako Outreach Programs Overview</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col bg-white dark:bg-background-dark">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-100 dark:border-slate-800 px-6 md:px-20 py-4 bg-white dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-4xl">flag</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold tracking-tight">Enako Outreach</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Programs</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Impact</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Donate</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-slate-900 text-sm font-bold transition-transform active:scale-95 shadow-sm shadow-primary/20">
+                Partner With Us
+            </button>
+<div class="bg-slate-100 dark:bg-slate-800 rounded-full p-1 border border-slate-200 dark:border-slate-700">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="User profile portrait of a professional team member" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj7xaxrAqkCGSimD-YN1QYbpmdouNi4ZI0SgLMrNd5lnYg76qex7A8K98Kv2j4QCKc9AucXl6Lbal4YZDU3RJGNk8UAz5_BIJ4o9gigHpePjDA7T_97lpV50TQP7o_xoXFxfBcuG3avHFyb_7U7yvGwDJ3xUUrji5V2C6pwlzRv82-ZUpULExh35WFRE9gSJKi7H9OSVPi4z4Solk_qdySXOk_lE5aP2lQ0IwsPh3LaA5AmNFuPB-VO5DV2zSIn3mbGKP82IrzQnI");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero/Intro Section -->
+<section class="max-w-[1200px] mx-auto px-6 py-16 md:py-24 flex flex-col items-center">
+<div class="max-w-[800px] text-center mb-16">
+<span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full">
+                    Our Mission
+                </span>
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                    Empowering Communities Across Africa
+                </h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed">
+                    At Enako Outreach, we are dedicated to fostering sustainable growth through targeted humanitarian initiatives. Our programs focus on bridging educational gaps and providing essential support to the most vulnerable communities to ensure long-term prosperity.
+                </p>
+</div>
+<!-- Program Grid -->
+<div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Scholarship Card -->
+<div class="group flex flex-col items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<div class="space-y-2">
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Scholarships</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-normal">
+                            Empowering the next generation of African leaders through academic support and financial grants.
+                        </p>
+</div>
+</div>
+<!-- Teacher Awards Card -->
+<div class="group flex flex-col items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+</div>
+<div class="space-y-2">
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Teacher Awards</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-normal">
+                            Recognizing excellence in education and honoring the dedicated mentors shaping the future.
+                        </p>
+</div>
+</div>
+<!-- Community Development Card -->
+<div class="group flex flex-col items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">diversity_3</span>
+</div>
+<div class="space-y-2">
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Community Dev</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-normal">
+                            Building sustainable local infrastructure and clean water systems for self-reliant villages.
+                        </p>
+</div>
+</div>
+<!-- Orphanage Support Card -->
+<div class="group flex flex-col items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">home</span>
+</div>
+<div class="space-y-2">
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Orphanage Support</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-normal">
+                            Providing a safe haven, nutritional support, and emotional care for children in need.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Context Section -->
+<section class="w-full px-6 pb-20">
+<div class="max-w-[1200px] mx-auto rounded-2xl overflow-hidden h-[400px] relative">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Children in a classroom smiling at the camera" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5xELTAiAuv4S4v966-mq5j1im76OxSRkjMDXXJyUH8fTDCpjkaAU_sCLBBg9JW8ODK__3B7PUNdP39ofosH_X5oeN-E436aDdx6qcdFxabfR5f7rIsqbyer7wMtUtTbRqQq_Zr3U9GjgTMLO_1iNzezGnbquVpecuksSx-ZbdKCQWyCw8L0zzcQezuWONFH7-HXN6WBe603BtF6VjfedXJ-_hzNyONyl6HVTKWNEGpCk4BqvbWOJ4K2sTPNBNOQVTFhaRRI9A9Pg');"></div>
+<div class="absolute bottom-8 left-8 right-8 z-20 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="text-white max-w-xl">
+<h3 class="text-2xl font-bold mb-2">Our impact in numbers</h3>
+<p class="text-white/80">Last year alone, we reached over 15,000 individuals through our core programs across Sub-Saharan Africa.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-white text-slate-900 px-6 py-3 rounded-lg font-bold hover:bg-slate-100 transition-colors">View Impact Report</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900/80 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-[1200px] mx-auto px-6 py-12 flex flex-col gap-10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">flag</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold tracking-tight">Enako Outreach</h2>
+</div>
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-4">
+<a class="text-slate-500 hover:text-primary text-sm font-medium transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-primary text-sm font-medium transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-primary text-sm font-medium transition-colors" href="#">Contact Us</a>
+<a class="text-slate-500 hover:text-primary text-sm font-medium transition-colors" href="#">FAQ</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-primary hover:text-white hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">public</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-primary hover:text-white hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">mail</span>
+</a>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 pt-8 text-center">
+<p class="text-slate-400 text-sm">© 2024 Enako Outreach Foundation. All rights reserved. Registered Humanitarian Non-Profit.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

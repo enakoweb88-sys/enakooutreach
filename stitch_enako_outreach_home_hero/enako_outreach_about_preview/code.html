@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3ab2f8",
+              "background-light": "#ffffff",
+              "background-dark": "#101c23",
+              "deep-navy": "#0f172a",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-100 dark:border-slate-800 px-10 py-4 lg:px-40">
+<div class="flex items-center gap-4 text-deep-navy dark:text-primary">
+<div class="size-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">volunteer_activism</span>
+</div>
+<h2 class="text-deep-navy dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Enako Outreach</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-deep-navy dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-deep-navy dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-deep-navy dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Programs</a>
+<a class="text-deep-navy dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Impact</a>
+</div>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all">
+<span>Donate</span>
+</button>
+</div>
+</header>
+<!-- About Section Preview -->
+<main class="flex-1">
+<section class="px-6 py-16 md:py-24 lg:px-40 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Left Column: Documentary Photography with Decorative Background -->
+<div class="relative group">
+<!-- Subtle Organic Shape Background -->
+<div class="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -bottom-10 -right-6 w-80 h-80 bg-primary/5 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] -z-10"></div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 group-hover:scale-[1.01]">
+<img class="w-full aspect-[4/5] object-cover" data-alt="Volunteers giving school supplies to smiling children in Africa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCenkbKaeWLAxtlZP7vSG9UP2MfJ2TBnP4qp5rJon00Zs9jzdY3CM6RLxMarKiHwEz3EsO-LRxiEKGSZwck674TsZx4oZzwPkgdoAb_2Gv0-fTVZfMbKC6fiihy-vQ5kgnEMCXAIgA14KNeL7zncXUD0zqncO-QRUiQe5iq5yPKlMwrQl7t1S8AwVIJlPChh2e6niI4p0xJj5dFzTgE87zo7FNUawxs43QT68U_05yITo56iQguBr4ZI_Y8BycMNs1CQJj8b32aMLA"/>
+<!-- Image Overlay for authentic feel -->
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy/20 to-transparent"></div>
+</div>
+</div>
+<!-- Right Column: Storytelling Content -->
+<div class="flex flex-col gap-8 max-w-[540px]">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-primary font-bold tracking-widest uppercase text-xs">
+<span class="h-[2px] w-8 bg-primary"></span>
+                                    Our Story
+                                </div>
+<h1 class="text-deep-navy dark:text-white text-4xl md:text-5xl font-extrabold leading-[1.15] tracking-tight">
+                                    Who We Are
+                                </h1>
+</div>
+<div class="flex flex-col gap-6">
+<p class="text-slate-600 dark:text-slate-300 text-lg md:text-xl leading-relaxed font-normal">
+                                    Enako Outreach was born from a vision of an Africa where every child has a desk, every teacher feels valued, and every community has the tools to thrive. 
+                                </p>
+<p class="text-slate-600 dark:text-slate-300 text-lg md:text-xl leading-relaxed font-normal">
+                                    We are more than a foundation; we are a movement of hope and tangible action. Our commitment lies in creating sustainable change through education and empowerment.
+                                </p>
+</div>
+<div class="pt-4">
+<button class="group flex items-center gap-3 min-w-[200px] cursor-pointer overflow-hidden rounded-lg h-14 px-8 bg-primary text-white text-base font-bold transition-all hover:shadow-lg hover:shadow-primary/20 active:scale-95">
+<span>Learn More About Us</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+<!-- Quick Stats or Mission Points -->
+<div class="grid grid-cols-2 gap-6 mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
+<div class="flex flex-col gap-1">
+<span class="text-2xl font-bold text-deep-navy dark:text-white">15k+</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">Students Supported</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-2xl font-bold text-deep-navy dark:text-white">42</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">Schools Rebuilt</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col gap-8 px-10 py-16 text-center lg:px-40 border-t border-slate-100 dark:border-slate-800">
+<div class="flex flex-wrap items-center justify-center gap-8 md:justify-around">
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex justify-center gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+<p class="text-slate-400 text-sm font-normal">© 2024 Enako Outreach. Empowering communities through education.</p>
+</footer>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#144bb8",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "navy-deep": "#0a1d44",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Newsreader', serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header Section -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-5 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">diversity_3</span>
+</div>
+<h2 class="text-navy-deep dark:text-slate-100 text-xl font-bold leading-tight tracking-tight font-display">Enako Outreach</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Our Mission</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Projects</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Stories</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Get Involved</a>
+</nav>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-11 px-5 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90">
+<span>Donate Now</span>
+</button>
+<div class="bg-slate-200 dark:bg-slate-700 rounded-full size-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500">person</span>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<div class="px-6 md:px-10 lg:px-20 py-10 max-w-[1440px] mx-auto">
+<div class="relative overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-900 min-h-[600px] flex items-center">
+<!-- Hero Image Background with Content-Specific Alt -->
+<div class="absolute inset-0 z-0">
+<img alt="Students in Africa" class="w-full h-full object-cover" data-alt="Joyful African students celebrating their graduation in caps and gowns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcA6V47w56GtHw5W_BibAZ8yRKAMje2naqoBTgXswO-kQaHl64WdACzKi0-E9D5eAxkBVovqAmJj2XmhF7Z9NW6OCxwJypwo-A_TzKnG70ETpzgnK7rNAMU2F1l7NV48OdIblHfmH6r__qOlmaCrRHIC1FcRfRdmHzoVkwDVuvAs2FbBjlTDT0SQwbLj5aJ32hJASCy9nnTGDnzgYGN6Fer_HMrnJ2oQGogUtemdeDDFfgaU2Zx8Ki7LZiNwxvrYi_jwvZF2r0Mp8"/>
+<!-- Gradient Overlay for Legibility -->
+<div class="absolute inset-0 bg-gradient-to-r from-navy-deep/80 via-navy-deep/40 to-transparent"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 w-full max-w-2xl px-10 py-16 md:px-16">
+<div class="flex flex-col gap-6">
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-xs">Empowering the Future</span>
+<h1 class="text-white text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight font-display">
+                                    Give Hope.<br/>Create Opportunity.
+                                </h1>
+<p class="text-slate-200 text-lg md:text-xl font-normal leading-relaxed max-w-lg">
+                                    Your contribution directly funds scholarships, supports educators, and builds stronger communities across Africa.
+                                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-primary text-white text-base font-bold transition-all hover:scale-105">
+                                        Support a Student
+                                    </button>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-white/10 backdrop-blur-md text-white border border-white/20 text-base font-bold transition-all hover:bg-white/20">
+                                        Learn More
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Impact Stats Section -->
+<div class="px-6 md:px-10 lg:px-20 pb-20 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-3 rounded-xl p-8 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm transition-transform hover:-translate-y-1">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">school</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Students Funded</p>
+<p class="text-navy-deep dark:text-white text-4xl font-bold font-display">12,000+</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-normal">Providing access to quality education for underprivileged youth.</p>
+</div>
+<div class="flex flex-col gap-3 rounded-xl p-8 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm transition-transform hover:-translate-y-1">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Schools Built</p>
+<p class="text-navy-deep dark:text-white text-4xl font-bold font-display">45</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-normal">Constructing modern learning environments in remote areas.</p>
+</div>
+<div class="flex flex-col gap-3 rounded-xl p-8 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm transition-transform hover:-translate-y-1">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">public</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Communities Reached</p>
+<p class="text-navy-deep dark:text-white text-4xl font-bold font-display">120+</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-normal">Creating sustainable change across the African continent.</p>
+</div>
+</div>
+</div>
+<!-- Newsletter Section -->
+<div class="bg-navy-deep py-20">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<h2 class="text-white text-4xl font-bold font-display mb-4">Stay updated on our impact</h2>
+<p class="text-slate-300 text-lg mb-10">Join our newsletter to see how your donations are changing lives through educational excellence.</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+<input class="flex-1 px-6 h-14 rounded-lg bg-white/5 border border-white/20 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Enter your email address" type="email"/>
+<button class="bg-primary text-white font-bold px-10 h-14 rounded-lg hover:bg-primary/90 transition-colors">
+                                Subscribe
+                            </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Section -->
+<footer class="flex flex-col gap-10 px-10 py-16 text-center bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-wrap items-center justify-center gap-12">
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Annual Report</a>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">language</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-center gap-2 text-primary">
+<span class="material-symbols-outlined text-xl">diversity_3</span>
+<p class="text-navy-deep dark:text-slate-200 font-bold font-display">Enako Outreach</p>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">© 2024 Enako Outreach. Empowering Africa through education.</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
