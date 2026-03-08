@@ -36,7 +36,7 @@ const HomeHero = () => {
                         </FadeIn>
 
                         <FadeIn delay={0.2} direction="up">
-                            <h1 className="text-white text-6xl md:text-9xl font-black leading-[0.85] tracking-tighter">
+                            <h1 className="text-white text-5xl sm:text-6xl md:text-9xl font-black leading-[0.85] tracking-tighter break-words">
                                 Empowering <br />
                                 <span className="text-primary italic">Futures.</span>
                             </h1>

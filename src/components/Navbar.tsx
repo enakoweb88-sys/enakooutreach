@@ -174,8 +174,11 @@ const Navbar = () => {
                         Donate
                     </Link>
                     <button
-                        className={`lg:hidden w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100 transition-colors ${isScrolled || !isHome ? 'text-navy' : 'text-primary bg-white'}`}
+                        className={`lg:hidden w-12 h-12 flex items-center justify-center rounded-xl transition-all active:scale-90 ${isScrolled || !isHome
+                            ? 'text-navy bg-slate-100'
+                            : 'text-white bg-white/10 backdrop-blur-md border border-white/20'}`}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label="Toggle Menu"
                     >
                         {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
