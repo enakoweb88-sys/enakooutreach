@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useSpring, useTransform, useInView } from 'framer-motion';
+import { School, Award, Globe, CheckCircle2, TrendingUp, BarChart3, PieChart } from 'lucide-react';
 import FadeIn from './FadeIn';
 
 const Counter = ({ value, suffix = "" }: { value: string, suffix?: string }) => {
@@ -23,155 +24,147 @@ const Counter = ({ value, suffix = "" }: { value: string, suffix?: string }) => 
 
 const ImpactDashboard: React.FC = () => {
     const stats = [
-        { label: "Students Supported", value: "12,500", icon: "school", trend: "+12%" },
-        { label: "Teachers Rewarded", value: "450", icon: "emoji_events", trend: "+8%" },
-        { label: "Communities Helped", value: "85", icon: "location_city", trend: "+15%" },
-        { label: "Projects Completed", value: "120", icon: "fact_check", trend: "+20%" }
+        { label: "Partner Schools", value: "5", icon: <School className="w-8 h-8" />, trend: "Active" },
+        { label: "Planned Beneficiaries", value: "15,000", icon: <Award className="w-8 h-8" />, trend: "Goal" },
+        { label: "Support Communities", value: "12", icon: <Globe className="w-8 h-8" />, trend: "Phase 1" },
+        { label: "Inaugural Charity", value: "1", icon: <CheckCircle2 className="w-8 h-8" />, trend: "Upcoming" }
     ];
 
     return (
-        <section className="py-24 px-6 md:px-12 bg-background-light dark:bg-background-dark">
-            <div className="max-w-7xl mx-auto">
-                <FadeIn direction="up">
-                    <div className="w-full text-center mb-20 space-y-4">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-primary text-primary text-xs font-bold uppercase tracking-widest">Global Humanitarian Impact</span>
-                        <h2 className="text-navy dark:text-white text-5xl md:text-6xl font-black leading-tight tracking-tight">
-                            Our Real-World <span className="text-primary italic">Change</span>
-                        </h2>
-                        <p className="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-                            Transparency is at the heart of our mission. Every contribution fuels measurable progress in education and community development across Africa.
-                        </p>
-                    </div>
-                </FadeIn>
+        <section className="py-32 px-6 md:px-12 bg-navy relative overflow-hidden">
+            {/* Background Accents */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="flex flex-col lg:flex-row items-center justify-between mb-24 gap-12">
+                    <FadeIn direction="right" className="max-w-2xl text-center lg:text-left">
+                        <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">Cameroon Humanitarian Impact</span>
+                        <h2 className="text-white text-5xl md:text-7xl font-black leading-[0.95] tracking-tighter">
+                            Measurable <br />
+                            <span className="text-primary italic">Change</span> in Real-Time
+                        </h2>
+                    </FadeIn>
+                    <FadeIn direction="left" className="max-w-md text-center lg:text-left">
+                        <p className="text-slate-400 text-lg font-medium leading-relaxed">
+                            Transparency is the bedrock of our foundation. We track every initiative with surgical precision to ensure maximum impact for every community we touch.
+                        </p>
+                    </FadeIn>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-24">
                     {stats.map((stat, i) => (
                         <FadeIn key={stat.label} direction="up" delay={i * 0.1}>
-                            <div className="group flex flex-col items-center justify-center p-12 rounded-3xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:border-primary transition-all duration-300 w-full h-full">
-                                <div className="mb-8 text-slate-400 group-hover:text-primary transition-colors transform group-hover:scale-110 duration-300">
-                                    <span className="material-symbols-outlined text-6xl">{stat.icon}</span>
+                            <div className="group relative p-10 rounded-[3rem] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary transition-all duration-700 text-center overflow-hidden">
+                                <div className="absolute -bottom-6 -right-6 text-white/5 group-hover:text-primary/10 transition-colors duration-700">
+                                    <PieChart className="w-32 h-32" />
                                 </div>
-                                <div className="flex items-center gap-1 mb-2">
-                                    <span className="text-navy dark:text-white text-5xl font-black tracking-tighter">
+                                <div className="mb-8 p-4 rounded-2xl bg-white/10 text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 inline-flex">
+                                    {stat.icon}
+                                </div>
+                                <div className="flex items-center justify-center gap-1 mb-2">
+                                    <span className="text-white text-6xl font-black tracking-tighter">
                                         <Counter value={stat.value} suffix="+" />
                                     </span>
                                 </div>
-                                <p className="text-slate-500 dark:text-slate-400 font-bold text-xs uppercase tracking-widest">{stat.label}</p>
-                                <span className="mt-4 text-emerald-500 text-xs font-bold bg-white border border-emerald-500 px-2 py-1 rounded-full">{stat.trend} Growth</span>
+                                <p className="text-slate-400 font-black text-[10px] uppercase tracking-[0.2em] mb-4">{stat.label}</p>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-black italic">
+                                    <TrendingUp className="w-3 h-3" /> {stat.trend} Growth
+                                </div>
                             </div>
                         </FadeIn>
                     ))}
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* Impact Scaling Chart */}
                     <FadeIn direction="right">
-                        <div className="flex flex-col gap-8 rounded-3xl bg-white dark:bg-slate-900 p-10 border border-slate-100 dark:border-slate-800 shadow-xl w-full h-full">
-                            <div className="flex justify-between items-start">
-                                <div>
-                                    <p className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Impact Scaling</p>
-                                    <h3 className="text-navy dark:text-white text-3xl font-bold tracking-tight">Annual Support Growth</h3>
+                        <div className="relative p-12 rounded-[3.5rem] bg-white border border-slate-100 shadow-2xl overflow-hidden h-full">
+                            <div className="flex items-start justify-between mb-12">
+                                <div className="space-y-2">
+                                    <div className="flex items-center gap-2 text-primary font-black uppercase text-[10px] tracking-widest">
+                                        <BarChart3 className="w-4 h-4" /> Impact Scaling
+                                    </div>
+                                    <h3 className="text-navy text-4xl font-black tracking-tight leading-none">Annual Support Growth</h3>
                                 </div>
                                 <div className="text-right">
-                                    <p className="text-primary text-4xl font-black leading-tight">+45%</p>
-                                    <p className="text-emerald-500 text-xs font-bold">+12% vs last year</p>
+                                    <p className="text-primary text-5xl font-black">+45%</p>
+                                    <p className="text-emerald-500 text-[10px] font-black uppercase tracking-widest italic">Exceptional Performance</p>
                                 </div>
                             </div>
-                            <div className="flex items-end justify-between h-56 px-4 pt-10">
-                                {[30, 55, 45, 85, 100].map((height, i) => (
-                                    <div key={i} className="flex flex-col items-center gap-4 w-12 group">
-                                        <motion.div
-                                            initial={{ height: 0 }}
-                                            whileInView={{ height: `${height}%` }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 1, delay: i * 0.1, ease: "easeOut" }}
-                                            className={`w-full rounded-t-xl relative overflow-hidden transition-all duration-500 ${i === 4 ? 'bg-primary' : 'bg-slate-100 dark:bg-slate-800 group-hover:bg-white border border-primary'}`}
-                                        />
-                                        <p className={`text-xs font-bold ${i === 4 ? 'text-navy dark:text-white' : 'text-slate-400'}`}>202{i}</p>
+
+                            <div className="flex items-end justify-between h-64 gap-6 px-4">
+                                {[40, 65, 50, 90, 100].map((height, i) => (
+                                    <div key={i} className="flex-1 flex flex-col items-center gap-6 group">
+                                        <div className="relative w-full h-full flex items-end">
+                                            <motion.div
+                                                initial={{ height: 0 }}
+                                                whileInView={{ height: `${height}%` }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 1.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                                                className={`w-full rounded-2xl relative transition-all duration-700 ${i === 4 ? 'bg-primary shadow-2xl shadow-primary/40' : 'bg-slate-100 group-hover:bg-slate-200'}`}
+                                            >
+                                                <div className="absolute top-4 left-1/2 -translate-x-1/2 text-navy/20 font-black text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">
+                                                    {height}%
+                                                </div>
+                                            </motion.div>
+                                        </div>
+                                        <span className={`text-[10px] font-black tracking-widest uppercase ${i === 4 ? 'text-primary' : 'text-slate-400'}`}>202{i}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </FadeIn>
 
-                    {/* Efficiency Module */}
                     <FadeIn direction="left">
-                        <div className="flex flex-col gap-8 rounded-3xl bg-white dark:bg-slate-900 p-10 border border-slate-100 dark:border-slate-800 shadow-xl w-full h-full">
-                            <div className="flex justify-between items-start">
-                                <div>
-                                    <p className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Operational Health</p>
-                                    <h3 className="text-navy dark:text-white text-3xl font-bold tracking-tight">Project Completion Rate</h3>
+                        <div className="relative p-12 rounded-[3.5rem] bg-white border border-slate-100 shadow-2xl overflow-hidden h-full flex flex-col">
+                            <div className="flex items-start justify-between mb-12">
+                                <div className="space-y-2">
+                                    <div className="flex items-center gap-2 text-primary font-black uppercase text-[10px] tracking-widest">
+                                        <Globe className="w-4 h-4" /> Regional Reach
+                                    </div>
+                                    <h3 className="text-navy text-4xl font-black tracking-tight leading-none">Operational Health</h3>
                                 </div>
                                 <div className="text-right">
-                                    <p className="text-secondary text-4xl font-black leading-tight">98%</p>
-                                    <p className="text-emerald-500 text-xs font-bold">Optimal Performance</p>
+                                    <p className="text-navy text-5xl font-black">98%</p>
+                                    <p className="text-primary text-[10px] font-black uppercase tracking-widest italic tracking-tighter">Efficiency Target Met</p>
                                 </div>
                             </div>
-                            <div className="flex-1 min-h-[180px] py-4 flex items-center justify-center">
-                                <div className="w-full h-full relative">
-                                    <svg className="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 400 120">
-                                        <defs>
-                                            <linearGradient id="impact-gradient" x1="0" x2="0" y1="0" y2="1">
-                                                <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.3" />
-                                                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
-                                            </linearGradient>
-                                        </defs>
-                                        <motion.path
-                                            initial={{ pathLength: 0, opacity: 0 }}
-                                            whileInView={{ pathLength: 1, opacity: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 2, ease: "easeInOut" }}
-                                            d="M0 100 Q 50 20, 100 70 T 200 40 T 300 90 T 400 20"
-                                            stroke="#D4AF37"
-                                            strokeWidth="6"
-                                            fill="none"
-                                            strokeLinecap="round"
-                                        />
-                                        <motion.path
-                                            initial={{ opacity: 0 }}
-                                            whileInView={{ opacity: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: 1.5 }}
-                                            d="M0 100 Q 50 20, 100 70 T 200 40 T 300 90 T 400 20 L 400 120 L 0 120 Z"
-                                            fill="url(#impact-gradient)"
-                                        />
+
+                            <div className="flex-grow flex items-center justify-center p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
+                                <div className="w-full max-w-sm aspect-square relative flex items-center justify-center">
+                                    <div className="absolute inset-0 rounded-full border-[20px] border-slate-200" />
+                                    <svg className="w-full h-full -rotate-90">
                                         <motion.circle
-                                            initial={{ scale: 0 }}
-                                            whileInView={{ scale: 1 }}
+                                            cx="50%" cy="50%" r="45%"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            className="text-primary"
+                                            strokeWidth="20"
+                                            strokeDasharray="100 100"
+                                            initial={{ strokeDashoffset: 100 }}
+                                            whileInView={{ strokeDashoffset: 2 }}
                                             viewport={{ once: true }}
-                                            transition={{ delay: 2 }}
-                                            cx="400" cy="20" r="8" fill="#D4AF37" stroke="white" strokeWidth="3"
+                                            transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
+                                            strokeLinecap="round"
+                                            style={{ filter: 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.3))' }}
                                         />
                                     </svg>
+                                    <div className="absolute text-center">
+                                        <span className="text-5xl font-black text-navy block tracking-tighter">98.4%</span>
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Survival Rate</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="flex justify-between mt-auto">
-                                {['Jan', 'Mar', 'May', 'Jul', 'Sep', 'Nov'].map(month => (
-                                    <p key={month} className="text-slate-400 text-[10px] font-bold tracking-widest uppercase">{month}</p>
-                                ))}
+
+                            <div className="mt-8 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                                <span>Infrastructure</span>
+                                <div className="h-px bg-slate-100 flex-grow mx-4" />
+                                <span>Education</span>
+                                <div className="h-px bg-slate-100 flex-grow mx-4" />
+                                <span>Health</span>
                             </div>
                         </div>
                     </FadeIn>
                 </div>
-
-                {/* Regional Impact Map Placeholder */}
-                <FadeIn direction="up">
-                    <div className="w-full mt-20 relative overflow-hidden rounded-xl bg-navy dark:bg-slate-900 aspect-[21/9] flex items-center justify-center group">
-                        <div
-                            className="absolute inset-0 grayscale contrast-150 transition-transform duration-1000 group-hover:scale-110"
-                            style={{
-                                backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDI36dZk3o8pFm81RpiydOkx4W5qB-beBt6-KaRy0a6iKfXTLJZVG-Nc_-yXlBnJ-b1PuZqmVZ2J4n_T3hBOamL-IC4NjdtAxB6HfS3ijTKY8o134I-SEXe2kRknzxglVcgfTZK Y8o134I-SEXe2kRknzxglVcgfTZKPkBEbde8fDlhiRpwaM4BOul5_n1FJdlv5qIhP3jiQAC6rG_B51VrO9IBA_-qubCAoqImZ_64HTishR5ZZXQFwCf2sHy6jMWiyC4Nsjcfpo4sawTdvatMoF2Avw4zaVnyyupRd8')",
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center'
-                            }}
-                        />
-                        <div className="absolute inset-0 bg-navy/40 group-hover:bg-navy/20 transition-colors" />
-                        <div className="relative z-10 text-center px-6">
-                            <h3 className="text-white text-3xl font-bold mb-4">Expanding our footprint across the continent</h3>
-                            <button className="px-8 py-3 bg-white text-navy font-bold rounded-full hover:bg-primary hover:text-white transition-all transform group-hover:scale-105">View Local Project Details</button>
-                        </div>
-                    </div>
-                </FadeIn>
             </div>
         </section>
     );

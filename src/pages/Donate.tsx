@@ -2,209 +2,269 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FadeIn from '../components/FadeIn';
+import { Heart, ShieldCheck, Globe, ArrowRight, CheckCircle2, Phone, Building2, Smartphone, Loader2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const amounts = [10, 25, 50, 100];
+const Donate = () => {
+    const [step, setStep] = useState(1);
+    const [amount, setAmount] = useState('5000');
+    const [method, setMethod] = useState('');
+    const [isProcessing, setIsProcessing] = useState(false);
+    const [phone, setPhone] = useState('');
 
-const DonatePage = () => {
-    const [selectedAmount, setSelectedAmount] = useState(50);
-    const [customAmount, setCustomAmount] = useState('');
-    const [selectedCause, setSelectedCause] = useState('general');
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const amounts = ['2000', '5000', '10000', '25000', '50000'];
 
-    const causes = [
-        { id: 'general', icon: 'volunteer_activism', label: 'General Fund', desc: 'Where needed most' },
-        { id: 'scholarship', icon: 'school', label: 'Scholarships', desc: 'Student support' },
-        { id: 'teacher', icon: 'emoji_events', label: 'Teacher Awards', desc: 'Educator rewards' },
-        { id: 'community', icon: 'location_city', label: 'Community Dev', desc: 'Infrastructure' },
-        { id: 'orphanage', icon: 'child_care', label: 'Orphanage', desc: 'Child welfare' },
-    ];
+    const handleNext = () => setStep(prev => prev + 1);
+    const handleBack = () => setStep(prev => prev - 1);
 
-    const faqs = [
-        { q: 'Is my donation tax-deductible?', a: 'Yes, Enako Outreach is a registered non-profit. All donations over XAF 10 are fully tax-deductible. You will receive a receipt by email within 24 hours.' },
-        { q: 'How is my donation used?', a: '92% of every donation goes directly to our field programs. 5% covers operational costs and 3% goes to payment processing. We publish annual financial reports for full transparency.' },
-        { q: 'Can I make a recurring donation?', a: 'Absolutely. Recurring donations let us plan more effectively for long-term programs. You can set up monthly giving and cancel anytime.' },
-        { q: 'Are international donations accepted?', a: 'Yes, we accept donations from anywhere in the world via Stripe, PayPal, or bank transfer in multiple currencies.' },
-    ];
+    const handleFinalize = () => {
+        setIsProcessing(true);
+        setTimeout(() => {
+            setIsProcessing(false);
+            setStep(4);
+        }, 3000);
+    };
+
+    const renderStep = () => {
+        switch (step) {
+            case 1:
+                return (
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        className="space-y-8"
+                    >
+                        <div className="text-center">
+                            <h3 className="text-3xl font-black text-navy mb-2 italic">Select Amount</h3>
+                            <p className="text-slate-500 font-medium">Your support fuels education in Cameroon.</p>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            {amounts.map((amt) => (
+                                <button
+                                    key={amt}
+                                    onClick={() => setAmount(amt)}
+                                    className={`h-20 rounded-2xl font-black text-xl transition-all ${amount === amt ? 'bg-primary text-white shadow-2xl shadow-primary/40 scale-105' : 'bg-slate-50 text-navy hover:bg-slate-100 border border-slate-100'}`}
+                                >
+                                    {parseInt(amt).toLocaleString()} <span className="text-[10px] opacity-60">XAF</span>
+                                </button>
+                            ))}
+                            <div className="relative group">
+                                <input
+                                    type="number"
+                                    placeholder="Custom"
+                                    onChange={(e) => setAmount(e.target.value)}
+                                    className="w-full h-20 px-6 rounded-2xl bg-slate-50 border border-slate-100 font-black text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                                />
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-300">XAF</span>
+                            </div>
+                        </div>
+                        <button
+                            onClick={handleNext}
+                            className="w-full h-20 bg-navy text-white rounded-2xl font-black uppercase tracking-[0.2em] shadow-2xl hover:bg-navy/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-3"
+                        >
+                            Next Step <ArrowRight className="w-5 h-5 text-primary" />
+                        </button>
+                    </motion.div>
+                );
+            case 2:
+                return (
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        className="space-y-8"
+                    >
+                        <div className="text-center">
+                            <h3 className="text-3xl font-black text-navy mb-2 italic">Payment Method</h3>
+                            <p className="text-slate-500 font-medium">Support via local mobile money or bank.</p>
+                        </div>
+                        <div className="space-y-4">
+                            {[
+                                { id: 'mtn', name: 'MTN Mobile Money', icon: <Smartphone className="w-6 h-6 text-[#FFCC00]" />, color: 'bg-[#FFCC00]/5 border-[#FFCC00]/20' },
+                                { id: 'orange', name: 'Orange Money', icon: <Smartphone className="w-6 h-6 text-[#FF6600]" />, color: 'bg-[#FF6600]/5 border-[#FF6600]/20' },
+                                { id: 'bank', name: 'Bank Transfer', icon: <Building2 className="w-6 h-6 text-primary" />, color: 'bg-primary/5 border-primary/20' }
+                            ].map((p) => (
+                                <button
+                                    key={p.id}
+                                    onClick={() => setMethod(p.id)}
+                                    className={`w-full p-6 rounded-2xl border flex items-center gap-6 transition-all ${method === p.id ? 'bg-navy text-white shadow-2xl scale-[1.02]' : `${p.color} hover:bg-slate-50 hover:scale-[1.01]`}`}
+                                >
+                                    <div className={`p-4 rounded-xl ${method === p.id ? 'bg-white/10' : 'bg-white shadow-sm'}`}>
+                                        {p.icon}
+                                    </div>
+                                    <span className="font-black text-lg tracking-tight">{p.name}</span>
+                                    {method === p.id && <CheckCircle2 className="ml-auto w-6 h-6 text-primary" />}
+                                </button>
+                            ))}
+                        </div>
+                        <div className="flex gap-4">
+                            <button onClick={handleBack} className="flex-1 h-20 rounded-2xl border border-slate-200 text-navy font-black uppercase tracking-widest hover:bg-slate-50 transition-all">Back</button>
+                            <button
+                                disabled={!method}
+                                onClick={handleNext}
+                                className="flex-[2] h-20 bg-navy text-white rounded-2xl font-black uppercase tracking-[0.2em] shadow-2xl hover:bg-navy/90 hover:scale-[1.02] disabled:opacity-50 disabled:scale-100 transition-all flex items-center justify-center gap-3"
+                            >
+                                Continue <ArrowRight className="w-5 h-5 text-primary" />
+                            </button>
+                        </div>
+                    </motion.div>
+                );
+            case 3:
+                return (
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        className="space-y-8"
+                    >
+                        <div className="text-center">
+                            <h3 className="text-3xl font-black text-navy mb-2 italic">Confirm Details</h3>
+                            <p className="text-slate-500 font-medium">Verify your payment information.</p>
+                        </div>
+                        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 space-y-6">
+                            <div className="flex justify-between items-center pb-6 border-b border-slate-200">
+                                <span className="text-slate-400 font-black uppercase text-[10px] tracking-widest">Amount</span>
+                                <span className="text-navy text-2xl font-black italic">{parseInt(amount).toLocaleString()} XAF</span>
+                            </div>
+
+                            {method === 'bank' ? (
+                                <div className="space-y-4">
+                                    <div className="p-4 bg-white rounded-xl border border-slate-100 space-y-2">
+                                        <p className="text-[10px] font-black uppercase tracking-widest text-primary">Bank Details (UBA Cameroon)</p>
+                                        <p className="text-navy font-black text-lg">ACC: 10034 00003 456789 22</p>
+                                        <p className="text-slate-500 text-xs font-bold uppercase">Enako Outreach Foundation</p>
+                                    </div>
+                                    <p className="text-xs text-slate-400 italic">Please make the transfer and enter your transaction ref below (optional).</p>
+                                </div>
+                            ) : (
+                                <div className="space-y-4">
+                                    <div className="relative">
+                                        <input
+                                            type="tel"
+                                            placeholder="6XX XXX XXX"
+                                            value={phone}
+                                            onChange={(e) => setPhone(e.target.value)}
+                                            className="w-full h-20 px-12 rounded-2xl bg-white border border-slate-200 font-black text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                                        />
+                                        <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300" />
+                                    </div>
+                                    <p className="text-xs text-slate-400 italic">You will receive a prompt on your phone to confirm the transaction.</p>
+                                </div>
+                            )}
+                        </div>
+                        <div className="flex gap-4">
+                            <button onClick={handleBack} className="flex-1 h-20 rounded-2xl border border-slate-200 text-navy font-black uppercase tracking-widest hover:bg-slate-50 transition-all">Back</button>
+                            <button
+                                disabled={isProcessing || (method !== 'bank' && phone.length < 9)}
+                                onClick={handleFinalize}
+                                className="flex-[2] h-20 bg-primary text-white rounded-2xl font-black uppercase tracking-[0.2em] shadow-2xl shadow-primary/40 hover:scale-[1.02] disabled:opacity-50 disabled:scale-100 transition-all flex items-center justify-center gap-3"
+                            >
+                                {isProcessing ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Confirm Payment'}
+                            </button>
+                        </div>
+                    </motion.div>
+                );
+            case 4:
+                return (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="text-center space-y-8 py-10"
+                    >
+                        <div className="w-24 h-24 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto mb-6">
+                            <CheckCircle2 className="w-12 h-12" />
+                        </div>
+                        <div>
+                            <h3 className="text-4xl font-black text-navy mb-4 italic">Thank You!</h3>
+                            <p className="text-slate-500 font-medium max-w-sm mx-auto leading-relaxed">
+                                Your donation of <span className="text-navy font-black">{parseInt(amount).toLocaleString()} XAF</span> has been received and confirmed.
+                            </p>
+                        </div>
+                        <div className="pt-8">
+                            <button
+                                onClick={() => setStep(1)}
+                                className="h-16 px-10 rounded-xl bg-navy text-white font-black uppercase tracking-widest text-xs hover:scale-105 active:scale-95 transition-all"
+                            >
+                                Make Another Donation
+                            </button>
+                        </div>
+                    </motion.div>
+                );
+            default:
+                return null;
+        }
+    };
 
     return (
-        <div className="flex flex-col min-h-screen bg-background-light">
+        <div className="flex flex-col min-h-screen bg-[#FAFAFA]">
             <Navbar />
-            <main className="flex-grow">
-                {/* HERO */}
-                <section className="relative w-full min-h-[60vh] flex flex-col items-start justify-end overflow-hidden pb-16 pt-32">
-                    <div className="absolute inset-0 z-0">
-                        <div className="absolute inset-0 bg-navy    z-10" />
-                        <img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcw8wxpYcYBRL5pXLzflekN0ZSeDZgXPZfP8prs4flNveXRQbXpOwb7I_-2nWDe0cBH3uYJrzYMnjbe1ISIDCgp4VNeM_Lr6i7W3Yet-UvfotldMpB9XlfbSq7Y4ral-63I4O9ZEnQAZg-UJ20y79euxrFznquIVxmYyixWzFSli6fYmnGmNs2BUByUTNMzAobC6Ggrnw1wbiXKhv0QuDrVb6_5kH15OME7yobzgFIkZejAP-QF18TbX2UKHqUxcS8qu7-YYwqRI8"
-                            alt="Children learning"
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
-                    <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-20 w-full">
-                        <FadeIn direction="up">
-                            <h1 className="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
-                                Give Hope.<br /><span className="text-primary">Create Opportunity.</span>
+            <main className="flex-grow pt-32 pb-24 px-6">
+                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+                    {/* LEFT CONTENT */}
+                    <div className="lg:w-1/2 space-y-12">
+                        <FadeIn direction="right">
+                            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-black uppercase tracking-[0.4em] w-fit">
+                                <Heart className="w-3 h-3" /> Support Our Mission
+                            </div>
+                        </FadeIn>
+                        <FadeIn direction="right" delay={0.2}>
+                            <h1 className="text-navy text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter">
+                                Invest in the <br />
+                                <span className="text-primary italic">Future</span> of Cameroon.
                             </h1>
                         </FadeIn>
-                        <FadeIn direction="up" delay={0.1}>
-                            <p className="text-slate-200 text-lg max-w-xl leading-relaxed mb-6">
-                                Every dollar you give directly funds scholarships, teacher rewards, and community development programs across Africa.
+                        <FadeIn direction="right" delay={0.3}>
+                            <p className="text-slate-500 text-xl font-medium leading-relaxed max-w-xl">
+                                Your contribution provides textbooks, restores classrooms, and supports teachers in Douala and beyond. 100% of your donation goes directly to the field.
                             </p>
                         </FadeIn>
-                        <FadeIn direction="up" delay={0.2}>
-                            <div className="flex gap-8">
-                                {[{ value: '92%', label: 'Funds to Programs' }, { value: 'XAF 2.4M', label: 'Funding Target' }, { value: '15k+', label: 'Lives Goal' }].map((s) => (
-                                    <div key={s.label}>
-                                        <p className="text-primary text-2xl font-black">{s.value}</p>
-                                        <p className="text-white text-sm">{s.label}</p>
+
+                        <FadeIn direction="right" delay={0.4}>
+                            <div className="grid grid-cols-2 gap-8">
+                                {[
+                                    { icon: ShieldCheck, title: 'Secure Payment', desc: 'Industry-standard encryption' },
+                                    { icon: Globe, title: 'Direct Impact', desc: 'Straight to community projects' }
+                                ].map((item, i) => (
+                                    <div key={i} className="space-y-3">
+                                        <div className="w-12 h-12 rounded-xl bg-white shadow-soft border border-slate-100 flex items-center justify-center text-navy">
+                                            <item.icon className="w-6 h-6" />
+                                        </div>
+                                        <h4 className="text-sm font-black text-navy uppercase tracking-widest italic">{item.title}</h4>
+                                        <p className="text-slate-400 text-xs font-medium leading-relaxed">{item.desc}</p>
                                     </div>
                                 ))}
                             </div>
                         </FadeIn>
                     </div>
-                </section>
 
-                {/* CHOOSE A CAUSE */}
-                <section className="py-16 px-6 lg:px-20 bg-white">
-                    <div className="max-w-4xl mx-auto">
-                        <FadeIn direction="up">
-                            <h2 className="text-navy text-3xl font-extrabold mb-2">Choose a Cause</h2>
-                            <p className="text-slate-500 mb-8">Select the program you'd like to support</p>
-                        </FadeIn>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                            {causes.map((cause, i) => (
-                                <FadeIn key={cause.id} direction="up" delay={i * 0.1}>
-                                    <button
-                                        onClick={() => setSelectedCause(cause.id)}
-                                        className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all w-full h-full ${selectedCause === cause.id
-                                            ? 'border-primary bg-primary/5 text-primary'
-                                            : 'border-slate-200 text-slate-600 hover:border-primary'
-                                            }`}
-                                    >
-                                        <span className="material-symbols-outlined text-3xl">{cause.icon}</span>
-                                        <span className="font-bold text-sm">{cause.label}</span>
-                                        <span className="text-xs ">{cause.desc}</span>
-                                    </button>
-                                </FadeIn>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* AMOUNT + FORM */}
-                <section className="py-16 px-6 lg:px-20 bg-background-light">
-                    <div className="max-w-4xl mx-auto">
-                        <FadeIn direction="up">
-                            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                                <h2 className="text-navy text-2xl font-extrabold mb-8">Select Donation Amount</h2>
-                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-                                    {amounts.map((a) => (
-                                        <button
-                                            key={a}
-                                            onClick={() => { setSelectedAmount(a); setCustomAmount(''); }}
-                                            className={`py-4 rounded-xl font-black text-xl border-2 transition-all ${selectedAmount === a && !customAmount
-                                                ? 'border-primary bg-primary text-white shadow-lg shadow-primary/25'
-                                                : 'border-slate-200 text-navy hover:border-primary'
-                                                }`}
-                                        >
-                                            XAF {a}
-                                        </button>
-                                    ))}
-                                </div>
-                                <div className="mb-8">
-                                    <label className="block text-sm font-bold text-navy mb-2">Custom Amount</label>
-                                    <div className="relative">
-                                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-navy font-bold text-lg">XAF </span>
-                                        <input
-                                            type="number"
-                                            value={customAmount}
-                                            onChange={(e) => { setCustomAmount(e.target.value); setSelectedAmount(0); }}
-                                            placeholder="Enter amount"
-                                            className="w-full h-14 pl-8 pr-4 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-primary text-navy text-lg font-bold"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Transparency bar */}
-                                <div className="bg-primary/5 border border-primary rounded-xl p-6 mb-8">
-                                    <div className="flex justify-between items-center mb-2">
-                                        <span className="text-navy font-bold text-sm">Fund allocation transparency</span>
-                                        <span className="text-primary font-black">92% to programs</span>
-                                    </div>
-                                    <div className="w-full bg-slate-200 rounded-full h-3">
-                                        <div className="bg-primary h-3 rounded-full" style={{ width: '92%' }} />
-                                    </div>
-                                    <p className="text-slate-500 text-xs mt-2">92% Programs · 5% Operations · 3% Payment processing</p>
-                                </div>
-
-                                {/* Payment methods */}
-                                <div className="mb-8">
-                                    <p className="text-sm font-bold text-navy mb-4">Accepted Payment Methods</p>
-                                    <div className="flex flex-wrap gap-3">
-                                        {['Credit Card', 'PayPal', 'Bank Transfer', 'Apple Pay', 'Google Pay'].map((m) => (
-                                            <span key={m} className="px-4 py-2 bg-slate-100 rounded-lg text-sm font-semibold text-navy">{m}</span>
+                    {/* RIGHT DONATION CARD */}
+                    <div className="lg:w-1/2 w-full max-w-2xl">
+                        <FadeIn direction="left" delay={0.2}>
+                            <div className="bg-white rounded-[3.5rem] p-10 md:p-14 shadow-premium border border-slate-100/50 relative overflow-hidden">
+                                {/* Step Indicator */}
+                                {step < 4 && (
+                                    <div className="flex gap-2 mb-12">
+                                        {[1, 2, 3].map((s) => (
+                                            <div
+                                                key={s}
+                                                className={`h-1.5 rounded-full transition-all duration-500 ${step >= s ? 'w-12 bg-primary' : 'w-4 bg-slate-100'}`}
+                                            />
                                         ))}
                                     </div>
-                                </div>
+                                ) || <div className="h-1.5 mb-12" />}
 
-                                <button className="w-full h-14 bg-primary rounded-xl text-white font-black text-lg hover:bg-primary hover:-translate-y-0.5 transition-all shadow-xl shadow-primary/25">
-                                    Donate XAF {customAmount || selectedAmount}
-                                </button>
+                                <AnimatePresence mode="wait">
+                                    {renderStep()}
+                                </AnimatePresence>
                             </div>
                         </FadeIn>
                     </div>
-                </section>
-
-                {/* FAQ */}
-                <section className="py-16 px-6 lg:px-20 bg-white">
-                    <div className="max-w-3xl mx-auto">
-                        <FadeIn direction="up">
-                            <div className="text-center mb-12">
-                                <h2 className="text-navy text-3xl font-extrabold mb-2">Donation FAQ</h2>
-                                <p className="text-slate-500">Common questions about giving to Enako Outreach</p>
-                            </div>
-                        </FadeIn>
-                        <div className="space-y-4">
-                            {faqs.map((faq, i) => (
-                                <FadeIn key={i} direction="up" delay={i * 0.1}>
-                                    <div className="border border-slate-200 rounded-xl overflow-hidden">
-                                        <button
-                                            onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                                            className="w-full flex items-center justify-between p-6 text-left"
-                                        >
-                                            <span className="font-bold text-navy">{faq.q}</span>
-                                            <span className="material-symbols-outlined text-primary transition-transform" style={{ transform: openFaq === i ? 'rotate(180deg)' : '' }}>
-                                                expand_more
-                                            </span>
-                                        </button>
-                                        {openFaq === i && (
-                                            <div className="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                                                <p className="pt-4">{faq.a}</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </FadeIn>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* FINAL CTA */}
-                <section className="py-20 px-6 bg-navy text-center">
-                    <FadeIn direction="up">
-                        <h2 className="text-white text-4xl font-black mb-4">Every Contribution Counts</h2>
-                        <p className="text-slate-300 text-lg max-w-2xl mx-auto mb-8">
-                            Whether you give XAF 5 or XAF 5,000, your contribution directly changes the trajectory of a child's life in Africa.
-                        </p>
-                        <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-flex items-center justify-center h-14 px-10 bg-primary rounded-lg text-white font-black text-lg hover:bg-primary transition-all">
-                            Donate Now
-                        </a>
-                    </FadeIn>
-                </section>
+                </div>
             </main>
             <Footer />
         </div>
     );
 };
 
-export default DonatePage;
+export default Donate;

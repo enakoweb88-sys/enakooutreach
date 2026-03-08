@@ -1,25 +1,37 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import HomeHero from '../components/HomeHero';
+import PremiumHeroCarousel from '../components/PremiumHeroCarousel';
 import ProgramsGrid from '../components/ProgramsGrid';
 import ImpactDashboard from '../components/ImpactDashboard';
+import IdeasSection from '../components/IdeasSection';
+import VideoShowcase from '../components/VideoShowcase';
+import AutoExplainerVideo from '../components/AutoExplainerVideo';
 import PartnerLogos from '../components/PartnerLogos';
 import VolunteerCTA from '../components/VolunteerCTA';
+import BeneficiaryStories from '../components/BeneficiaryStories';
+import LatestBlog from '../components/LatestBlog';
+import NewsletterCTA from '../components/NewsletterCTA';
 
-const HomePage = () => {
+const Home = () => {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="min-h-screen bg-white dark:bg-background-dark">
             <Navbar />
-            <main className="flex-grow">
-                <HomeHero />
+            <main>
+                <PremiumHeroCarousel />
                 <ProgramsGrid />
+                <AutoExplainerVideo />
                 <ImpactDashboard />
+                <IdeasSection />
+                <BeneficiaryStories />
                 <PartnerLogos />
                 <VolunteerCTA />
+                <VideoShowcase />
+                <LatestBlog />
+                <NewsletterCTA />
             </main>
             <Footer />
         </div>
     );
 };
 
-export default HomePage;
+export default Home;

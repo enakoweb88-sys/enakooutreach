@@ -8,7 +8,10 @@ import Volunteer from './pages/Volunteer';
 import Donate from './pages/Donate';
 import SchoolRegistration from './pages/SchoolRegistration';
 import ProgramDetail from './pages/ProgramDetail';
+import Roadmap from './pages/Roadmap';
+import Partnership from './pages/Partnership';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -25,7 +28,10 @@ function App() {
         <Route path="/volunteer" element={<Volunteer />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/school-registration" element={<SchoolRegistration />} />
+        <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/partnership" element={<Partnership />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </Router>
   );

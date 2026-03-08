@@ -96,7 +96,7 @@ const ProgramsOverview = () => {
                                     <Link to="/school-registration" className="flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-primary text-white font-bold hover:bg-primary transition-all text-sm">
                                         Apply Now <span className="material-symbols-outlined text-base">arrow_forward</span>
                                     </Link>
-                                    <Link to="/impact" className="flex items-center justify-center rounded-lg h-12 px-6 border-2 border-slate-200 text-navy font-bold hover:bg-slate-50 transition-all text-sm">
+                                    <Link to="/impact" className="flex items-center justify-center rounded-lg h-12 px-8 border border-slate-200 text-navy font-black text-[10px] uppercase tracking-widest hover:bg-slate-50 transition-all shadow-sm">
                                         Learn More
                                     </Link>
                                 </div>

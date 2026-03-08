@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { School, Heart, Users, Home, ChevronRight } from 'lucide-react';
 import FadeIn from './FadeIn';
 
 const AboutHero = () => {
@@ -9,7 +10,7 @@ const AboutHero = () => {
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-navy/60 z-10" />
                     <img
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9kUuWfv7zSj9R2D_Fh-BHtIEE-Q8Gbc2mSuUzi3IRzYkrx4OX93HEakYZnPAyXgdvtREtt2ObiN-OgDl33rFL7ROPGpSHO3bFlEMuBIyWdctBE2c6BjemwWNGT2OdFgrT3Uqyzh0MMsxDL6js2DCAj-Qv064BAlgUliX5ELN660r1OFPaO7nG88npwpWRqEDc59m0zjc4bZBLGCOpOlHH-sH6rjPMv-ktR5jgExuEH4JgU2UUvL8FGBT5JZtfYqoMF5TvRwwzEBA"
+                        src="/assets/images/about-hero.png"
                         alt="African community education"
                         className="w-full h-full object-cover"
                     />
@@ -31,7 +32,7 @@ const AboutHero = () => {
                     </FadeIn>
                     <FadeIn direction="up" delay={0.3}>
                         <p className="text-slate-200 text-lg md:text-xl font-normal max-w-2xl leading-relaxed mx-auto">
-                            Empowering communities and advancing education across Africa through sustainable humanitarian initiatives that foster growth and resilience.
+                            Empowering communities and advancing education across Cameroon through sustainable humanitarian initiatives that foster growth and resilience from our base in Douala.
                         </p>
                     </FadeIn>
                     <FadeIn direction="up" delay={0.4}>
@@ -50,12 +51,12 @@ const AboutHero = () => {
             {/* Mission block below hero */}
             <section className="max-w-7xl mx-auto px-6 py-14">
                 {/* Breadcrumb */}
-                <nav className="flex items-center gap-2 text-slate-500 text-sm mb-12">
-                    <Link to="/" className="hover:text-primary flex items-center gap-1 transition-colors">
-                        <span className="material-symbols-outlined text-base">home</span> Home
+                <nav className="flex items-center gap-3 text-slate-400 text-[10px] font-black uppercase tracking-widest mb-16">
+                    <Link to="/" className="hover:text-primary flex items-center gap-2 transition-colors">
+                        <Home className="w-3 h-3" /> Home
                     </Link>
-                    <span className="material-symbols-outlined text-sm">chevron_right</span>
-                    <span className="text-primary font-medium">About Us</span>
+                    <ChevronRight className="w-3 h-3 text-slate-300" />
+                    <span className="text-primary">About Us</span>
                 </nav>
 
                 {/* Mission split */}
@@ -71,24 +72,29 @@ const AboutHero = () => {
                         </div>
                         <div className="lg:col-span-8">
                             <p className="text-slate-600 text-xl font-normal leading-relaxed">
-                                Enako Outreach is dedicated to creating lasting change by focusing on grassroots education and holistic community development projects. We believe that sustainable impact starts with listening to local communities and providing them with the tools they need to thrive independently.
+                                Enako Outreach is dedicated to creating lasting change by focusing on grassroots education and holistic community development projects in Cameroon. With our first 5 partner schools in Douala, we are about to carry out our inaugural charity mission to provide immediate support to the leaders of tomorrow.
                             </p>
                         </div>
                     </div>
                 </FadeIn>
 
                 {/* 3 value pillars */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {[
-                        { icon: 'school', title: 'Education First', desc: 'Providing resources and building classrooms to ensure every child has access to quality learning environments.' },
-                        { icon: 'volunteer_activism', title: 'Health & Wellness', desc: 'Implementing clean water projects and medical outreach programs to improve community well-being.' },
-                        { icon: 'diversity_3', title: 'Local Partnership', desc: 'Working directly with community leaders to design programs that address specific local needs.' },
+                        { icon: School, title: 'Education First', desc: 'Providing resources and building classrooms to ensure every child has access to quality learning environments.' },
+                        { icon: Heart, title: 'Health & Wellness', desc: 'Implementing clean water projects and medical outreach programs to improve community well-being.' },
+                        { icon: Users, title: 'Local Partnership', desc: 'Working directly with community leaders to design programs that address specific local needs.' },
                     ].map((item, idx) => (
                         <FadeIn key={item.title} delay={idx * 0.1} direction="up" fullWidth>
-                            <div className="bg-slate-50 p-8 rounded-xl border border-slate-100 transition-transform hover:-translate-y-1 h-full">
-                                <span className="material-symbols-outlined text-primary text-4xl mb-4 block">{item.icon}</span>
-                                <h5 className="text-xl font-bold mb-3 text-navy">{item.title}</h5>
-                                <p className="text-slate-500">{item.desc}</p>
+                            <div className="bg-white p-10 rounded-[3rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_50px_120px_-30px_rgba(10,15,44,0.12)] transition-all duration-700 group border-none flex flex-col gap-8 h-full relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl group-hover:bg-primary/10 transition-colors" />
+                                <div className="w-20 h-20 rounded-2xl bg-slate-50 flex items-center justify-center text-navy group-hover:bg-navy group-hover:text-white transition-all duration-500 shadow-inner">
+                                    <item.icon className="w-10 h-10" />
+                                </div>
+                                <div className="space-y-4 relative z-10">
+                                    <h5 className="text-2xl font-black text-navy tracking-tight italic">{item.title}</h5>
+                                    <p className="text-slate-500 font-medium leading-relaxed">{item.desc}</p>
+                                </div>
                             </div>
                         </FadeIn>
                     ))}

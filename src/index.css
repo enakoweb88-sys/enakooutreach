@@ -8,22 +8,28 @@
     --color-background-light: #FFFFFF;
     --color-background-dark: #0A0F2C;
 
+    /* Premium UI Tokens */
+    --shadow-soft: 0 40px 100px -20px rgba(0, 0, 0, 0.05);
+    --shadow-premium: 0 50px 120px -30px rgba(10, 15, 44, 0.15);
+    --radius-premium: 2.5rem;
+    --radius-super: 4rem;
+
     /* Typography */
     --font-display: "Manrope", sans-serif;
     --font-sans: "Inter", sans-serif;
 
-    /* Override slate to only use allowed colors */
-    --color-slate-50: #FFFFFF;
-    --color-slate-100: #FFFFFF;
-    --color-slate-200: #3B3E45;
-    --color-slate-300: #3B3E45;
-    --color-slate-400: #3B3E45;
-    --color-slate-500: #3B3E45;
-    --color-slate-600: #3B3E45;
-    --color-slate-700: #1B2A49;
-    --color-slate-800: #1B2A49;
-    --color-slate-900: #0A0F2C;
-    --color-slate-950: #000000;
+    /* Re-defined slate for better depth (Restricted) */
+    --color-slate-50: #F8FAFC;
+    --color-slate-100: #F1F5F9;
+    --color-slate-200: #E2E8F0;
+    --color-slate-300: #CBD5E1;
+    --color-slate-400: #94A3B8;
+    --color-slate-500: #64748B;
+    --color-slate-600: #475569;
+    --color-slate-700: #334155;
+    --color-slate-800: #1E293B;
+    --color-slate-900: #0F172A;
+    --color-slate-950: #020617;
 
     /* Override standard colors used to map to primary (Gold) */
     --color-green-400: #D4AF37;
