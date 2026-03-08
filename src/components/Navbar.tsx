@@ -194,15 +194,60 @@ const Navbar = () => {
                     >
                         <div className="flex flex-col gap-4 overflow-y-auto">
                             {navLinks.map((link) => (
-                                <div key={link.name}>
-                                    <Link
-                                        to={link.href}
-                                        className="text-navy text-2xl font-black py-4 flex items-center justify-between group"
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                    >
-                                        {link.name}
-                                        <ChevronDown className="-rotate-90 text-slate-200 group-hover:text-primary" />
-                                    </Link>
+                                <div key={link.name} className="border-b border-slate-50 last:border-none">
+                                    {link.dropdown ? (
+                                        <div className="flex flex-col">
+                                            <button
+                                                onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
+                                                className="text-navy text-2xl font-black py-4 flex items-center justify-between group w-full text-left"
+                                            >
+                                                {link.name}
+                                                <ChevronDown className={`transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : '-rotate-90'} text-slate-300 group-hover:text-primary`} />
+                                            </button>
+                                            <AnimatePresence>
+                                                {activeDropdown === link.name && (
+                                                    <motion.div
+                                                        initial={{ height: 0, opacity: 0 }}
+                                                        animate={{ height: 'auto', opacity: 1 }}
+                                                        exit={{ height: 0, opacity: 0 }}
+                                                        className="overflow-hidden pl-4 bg-slate-50/50 rounded-2xl"
+                                                    >
+                                                        {link.dropdown.map((section) => (
+                                                            <div key={section.title} className="py-4 last:pb-8">
+                                                                <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-4">
+                                                                    {section.title}
+                                                                </h4>
+                                                                <div className="flex flex-col gap-4">
+                                                                    {section.items.map((sub) => (
+                                                                        <Link
+                                                                            key={sub.name}
+                                                                            to={sub.href}
+                                                                            className="flex items-center gap-4 py-2"
+                                                                            onClick={() => setIsMobileMenuOpen(false)}
+                                                                        >
+                                                                            <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary">
+                                                                                {sub.icon}
+                                                                            </div>
+                                                                            <span className="text-navy font-bold text-lg">{sub.name}</span>
+                                                                        </Link>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                        ))}
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+                                        </div>
+                                    ) : (
+                                        <Link
+                                            to={link.href}
+                                            className="text-navy text-2xl font-black py-4 flex items-center justify-between group"
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            {link.name}
+                                            <ChevronDown className="-rotate-90 text-slate-200 group-hover:text-primary" />
+                                        </Link>
+                                    )}
                                 </div>
                             ))}
                             <Link
