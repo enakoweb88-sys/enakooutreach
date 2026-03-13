@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { GraduationCap, Award, Globe, Heart, ArrowRight } from 'lucide-react';
 import FadeIn from './FadeIn';
+import AnimatedNetworkBg from './AnimatedNetworkBg';
 
 const programs = [
     {
@@ -39,8 +40,9 @@ const programs = [
 
 const ProgramsGrid = () => {
     return (
-        <section className="bg-white py-24 px-6 md:px-12 overflow-hidden">
-            <div className="max-w-7xl mx-auto">
+        <section className="bg-white py-24 px-6 md:px-12 overflow-hidden relative">
+            <AnimatedNetworkBg particleCount={35} lineColor="rgba(10,15,44,0.04)" />
+            <div className="max-w-7xl mx-auto relative z-10">
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
                     <FadeIn direction="right" className="max-w-2xl">
                         <span className="text-slate-500 font-black tracking-[0.3em] uppercase text-[10px] mb-4 block">Commitment to Change</span>
