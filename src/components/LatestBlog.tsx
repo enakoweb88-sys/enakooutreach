@@ -7,10 +7,7 @@ const LatestBlog = () => {
     const latestPosts = blogPosts.slice(0, 3);
 
     return (
-        <section className="py-32 bg-white px-6 md:px-12 relative overflow-hidden">
-            {/* Background Accent */}
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -skew-x-12 translate-x-1/2 pointer-events-none" />
-
+        <section className="py-32 bg-transparent px-6 md:px-12 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                     <div className="max-w-2xl">

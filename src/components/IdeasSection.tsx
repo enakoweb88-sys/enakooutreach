@@ -42,16 +42,7 @@ const ArrowConnector = () => (
 
 const IdeasSection = () => {
     return (
-        <section className="bg-white py-28 px-6 md:px-16 relative overflow-hidden">
-            {/* Subtle dot pattern */}
-            <div
-                className="absolute inset-0 pointer-events-none opacity-20"
-                style={{
-                    backgroundImage: 'radial-gradient(circle, #0A0F2C18 1px, transparent 1px)',
-                    backgroundSize: '32px 32px',
-                }}
-            />
-
+        <section className="bg-transparent py-28 px-6 md:px-16 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
                 <FadeIn direction="up">

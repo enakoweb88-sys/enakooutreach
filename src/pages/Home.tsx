@@ -12,25 +12,30 @@ import BeneficiaryStories from '../components/BeneficiaryStories';
 import StoryHighlight from '../components/StoryHighlight';
 import LatestBlog from '../components/LatestBlog';
 import NewsletterCTA from '../components/NewsletterCTA';
+import AnimatedNetworkBg from '../components/AnimatedNetworkBg';
 
 const Home = () => {
     return (
         <div className="min-h-screen bg-white dark:bg-background-dark">
             <Navbar />
-            <main>
-                <PremiumHeroCarousel />
-                <ProgramsGrid />
-                <ImpactDashboard />
-                <AutoExplainerVideo />
-                <IdeasSection />
-                <BeneficiaryStories />
-                <StoryHighlight />
-                <PartnerLogos />
-                <VolunteerCTA />
-                <VideoShowcase />
-                <LatestBlog />
-                <NewsletterCTA />
-            </main>
+            {/* Single unified animated background for the whole page */}
+            <div className="relative">
+                <AnimatedNetworkBg particleCount={60} />
+                <main className="relative z-10">
+                    <PremiumHeroCarousel />
+                    <ProgramsGrid />
+                    <ImpactDashboard />
+                    <IdeasSection />
+                    <BeneficiaryStories />
+                    <AutoExplainerVideo />
+                    <StoryHighlight />
+                    <PartnerLogos />
+                    <VideoShowcase />
+                    <VolunteerCTA />
+                    <LatestBlog />
+                    <NewsletterCTA />
+                </main>
+            </div>
             <Footer />
         </div>
     );

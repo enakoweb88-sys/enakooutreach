@@ -14,7 +14,7 @@ const logos = [
 
 const PartnerLogos = () => {
     return (
-        <section className="py-32 bg-slate-50 overflow-hidden">
+        <section className="py-32 bg-transparent overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 text-center mb-24">
                 <FadeIn direction="up">
                     <div className="flex items-center justify-center gap-2 text-primary font-black text-[10px] uppercase tracking-[0.4em] mb-6">
@@ -52,8 +52,8 @@ const PartnerLogos = () => {
                 </motion.div>
 
                 {/* Gradient Masks */}
-                <div className="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
             </div>
 
             <div className="max-w-7xl mx-auto text-center mt-12">

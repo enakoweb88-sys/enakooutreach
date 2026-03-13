@@ -39,7 +39,7 @@ const ProgramsHero = () => {
             </section>
 
             {/* Overview section */}
-            <section className="bg-white py-16 px-6 lg:px-20" id="programs">
+            <section className="bg-transparent py-16 px-6 lg:px-20" id="programs">
                 <div className="max-w-7xl mx-auto">
                     <FadeIn direction="up">
                         <div className="text-center mb-12">

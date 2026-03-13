@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import FadeIn from '../components/FadeIn';
 import { Heart, ShieldCheck, Globe, ArrowRight, CheckCircle2, Phone, Building2, Smartphone, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedNetworkBg from '../components/AnimatedNetworkBg';
 
 const Donate = () => {
     const [step, setStep] = useState(1);
@@ -197,71 +198,74 @@ const Donate = () => {
     };
 
     return (
-        <div className="flex flex-col min-h-screen bg-[#FAFAFA]">
+        <div className="flex flex-col min-h-screen bg-white">
             <Navbar />
-            <main className="flex-grow pt-32 pb-24 px-6">
-                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
-                    {/* LEFT CONTENT */}
-                    <div className="lg:w-1/2 space-y-12">
-                        <FadeIn direction="right">
-                            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-black uppercase tracking-[0.4em] w-fit">
-                                <Heart className="w-3 h-3" /> Support Our Mission
-                            </div>
-                        </FadeIn>
-                        <FadeIn direction="right" delay={0.2}>
-                            <h1 className="text-navy text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter">
-                                Invest in the <br />
-                                <span className="text-primary italic">Future</span> of Cameroon.
-                            </h1>
-                        </FadeIn>
-                        <FadeIn direction="right" delay={0.3}>
-                            <p className="text-slate-500 text-xl font-medium leading-relaxed max-w-xl">
-                                Your contribution provides textbooks, restores classrooms, and supports teachers in Douala and beyond. 100% of your donation goes directly to the field.
-                            </p>
-                        </FadeIn>
+            <div className="relative">
+                <AnimatedNetworkBg particleCount={40} />
+                <main className="flex-grow pt-32 pb-24 px-6 relative z-10">
+                    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+                        {/* LEFT CONTENT */}
+                        <div className="lg:w-1/2 space-y-12">
+                            <FadeIn direction="right">
+                                <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-black uppercase tracking-[0.4em] w-fit">
+                                    <Heart className="w-3 h-3" /> Support Our Mission
+                                </div>
+                            </FadeIn>
+                            <FadeIn direction="right" delay={0.2}>
+                                <h1 className="text-navy text-4xl md:text-6xl font-black leading-[0.9] tracking-tighter">
+                                    Invest in the <br />
+                                    <span className="text-primary italic">Future</span> of Cameroon.
+                                </h1>
+                            </FadeIn>
+                            <FadeIn direction="right" delay={0.3}>
+                                <p className="text-slate-500 text-xl font-medium leading-relaxed max-w-xl">
+                                    Your contribution provides textbooks, restores classrooms, and supports teachers in Douala and beyond. 100% of your donation goes directly to the field.
+                                </p>
+                            </FadeIn>
 
-                        <FadeIn direction="right" delay={0.4}>
-                            <div className="grid grid-cols-2 gap-8">
-                                {[
-                                    { icon: ShieldCheck, title: 'Secure Payment', desc: 'Industry-standard encryption' },
-                                    { icon: Globe, title: 'Direct Impact', desc: 'Straight to community projects' }
-                                ].map((item, i) => (
-                                    <div key={i} className="space-y-3">
-                                        <div className="w-12 h-12 rounded-xl bg-white shadow-soft border border-slate-100 flex items-center justify-center text-navy">
-                                            <item.icon className="w-6 h-6" />
+                            <FadeIn direction="right" delay={0.4}>
+                                <div className="grid grid-cols-2 gap-8">
+                                    {[
+                                        { icon: ShieldCheck, title: 'Secure Payment', desc: 'Industry-standard encryption' },
+                                        { icon: Globe, title: 'Direct Impact', desc: 'Straight to community projects' }
+                                    ].map((item, i) => (
+                                        <div key={i} className="space-y-3">
+                                            <div className="w-12 h-12 rounded-xl bg-white shadow-soft border border-slate-100 flex items-center justify-center text-navy">
+                                                <item.icon className="w-6 h-6" />
+                                            </div>
+                                            <h4 className="text-sm font-black text-navy uppercase tracking-widest italic">{item.title}</h4>
+                                            <p className="text-slate-400 text-xs font-medium leading-relaxed">{item.desc}</p>
                                         </div>
-                                        <h4 className="text-sm font-black text-navy uppercase tracking-widest italic">{item.title}</h4>
-                                        <p className="text-slate-400 text-xs font-medium leading-relaxed">{item.desc}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </FadeIn>
-                    </div>
+                                    ))}
+                                </div>
+                            </FadeIn>
+                        </div>
 
-                    {/* RIGHT DONATION CARD */}
-                    <div className="lg:w-1/2 w-full max-w-2xl">
-                        <FadeIn direction="left" delay={0.2}>
-                            <div className="bg-white rounded-[3.5rem] p-10 md:p-14 shadow-premium border border-slate-100/50 relative overflow-hidden">
-                                {/* Step Indicator */}
-                                {step < 4 && (
-                                    <div className="flex gap-2 mb-12">
-                                        {[1, 2, 3].map((s) => (
-                                            <div
-                                                key={s}
-                                                className={`h-1.5 rounded-full transition-all duration-500 ${step >= s ? 'w-12 bg-primary' : 'w-4 bg-slate-100'}`}
-                                            />
-                                        ))}
-                                    </div>
-                                ) || <div className="h-1.5 mb-12" />}
+                        {/* RIGHT DONATION CARD */}
+                        <div className="lg:w-1/2 w-full max-w-2xl">
+                            <FadeIn direction="left" delay={0.2}>
+                                <div className="bg-white rounded-[3.5rem] p-10 md:p-14 shadow-premium border border-slate-100/50 relative overflow-hidden">
+                                    {/* Step Indicator */}
+                                    {step < 4 && (
+                                        <div className="flex gap-2 mb-12">
+                                            {[1, 2, 3].map((s) => (
+                                                <div
+                                                    key={s}
+                                                    className={`h-1.5 rounded-full transition-all duration-500 ${step >= s ? 'w-12 bg-primary' : 'w-4 bg-slate-100'}`}
+                                                />
+                                            ))}
+                                        </div>
+                                    ) || <div className="h-1.5 mb-12" />}
 
-                                <AnimatePresence mode="wait">
-                                    {renderStep()}
-                                </AnimatePresence>
-                            </div>
-                        </FadeIn>
+                                    <AnimatePresence mode="wait">
+                                        {renderStep()}
+                                    </AnimatePresence>
+                                </div>
+                            </FadeIn>
+                        </div>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
             <Footer />
         </div>
     );

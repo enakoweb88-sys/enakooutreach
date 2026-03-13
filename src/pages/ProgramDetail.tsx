@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FadeIn from '../components/FadeIn';
+import AnimatedNetworkBg from '../components/AnimatedNetworkBg';
 
 const programData = {
     'scholarships': {
@@ -90,86 +91,89 @@ const ProgramDetailPage = () => {
     }
 
     return (
-        <div className="flex flex-col min-h-screen bg-background-light">
+        <div className="flex flex-col min-h-screen bg-white">
             <Navbar />
-            <main className="flex-grow">
-                {/* Hero Header */}
-                <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-                    <img src={program.image} alt={program.title} className="absolute inset-0 w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-navy/60 backdrop-blur-[2px]" />
-                    <div className="relative z-10 text-center px-6 max-w-4xl">
-                        <FadeIn direction="up">
-                            <span className="material-symbols-outlined text-primary text-6xl mb-6">{program.icon}</span>
-                            <h1 className="text-white text-5xl md:text-7xl font-black mb-6 tracking-tight">{program.title}</h1>
-                            <p className="text-white/80 text-xl leading-relaxed max-w-2xl mx-auto">{program.longDesc}</p>
-                        </FadeIn>
-                    </div>
-                </section>
+            <div className="relative">
+                <AnimatedNetworkBg particleCount={40} />
+                <main className="flex-grow relative z-10">
+                    {/* Hero Header */}
+                    <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                        <img src={program.image} alt={program.title} className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-navy/60 backdrop-blur-[2px]" />
+                        <div className="relative z-10 text-center px-6 max-w-4xl">
+                            <FadeIn direction="up">
+                                <span className="material-symbols-outlined text-primary text-6xl mb-6">{program.icon}</span>
+                                <h1 className="text-white text-4xl md:text-6xl font-black mb-6 tracking-tight">{program.title}</h1>
+                                <p className="text-white/80 text-xl leading-relaxed max-w-2xl mx-auto">{program.longDesc}</p>
+                            </FadeIn>
+                        </div>
+                    </section>
 
-                {/* Impact Metrics */}
-                <section className="py-20 px-6 lg:px-20 -mt-10 relative z-20">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {program.stats.map((s, i) => (
-                                <FadeIn key={i} direction="up" delay={i * 0.1}>
-                                    <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-xl text-center">
-                                        <div className="text-primary text-4xl font-black mb-2">{s.value}</div>
-                                        <div className="text-navy text-sm font-bold uppercase tracking-wider">{s.label}</div>
+                    {/* Impact Metrics */}
+                    <section className="py-20 px-6 lg:px-20 -mt-10 relative z-20">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                {program.stats.map((s, i) => (
+                                    <FadeIn key={i} direction="up" delay={i * 0.1}>
+                                        <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-xl text-center">
+                                            <div className="text-primary text-4xl font-black mb-2">{s.value}</div>
+                                            <div className="text-navy text-sm font-bold uppercase tracking-wider">{s.label}</div>
+                                        </div>
+                                    </FadeIn>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Content Sections */}
+                    <section className="py-20 px-6 lg:px-20 bg-transparent">
+                        <div className="max-w-5xl mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+                                <FadeIn direction="right">
+                                    <h2 className="text-navy text-4xl font-black mb-8">Program Roadmap</h2>
+                                    <div className="space-y-12 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-100">
+                                        {program.milestones.map((m, i) => (
+                                            <div key={i} className="relative pl-12 group">
+                                                <div className="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-white border-2 border-primary group-hover:bg-primary transition-colors" />
+                                                <div className="text-primary font-black text-xs mb-1 uppercase tracking-widest">{m.year}</div>
+                                                <p className="text-navy font-bold leading-relaxed">{m.event}</p>
+                                            </div>
+                                        ))}
                                     </div>
                                 </FadeIn>
-                            ))}
+
+                                <FadeIn direction="left">
+                                    <div className="bg-background-light p-10 rounded-3xl border border-slate-200">
+                                        <h3 className="text-navy text-2xl font-black mb-6">How You Can Help</h3>
+                                        <p className="text-slate-600 mb-8 leading-relaxed">Your support enables us to scale this program and reach more communities. 100% of your donation toward this fund goes directly to the project costs.</p>
+                                        <ul className="space-y-4 mb-10">
+                                            {['Direct Financial Support', 'Equipment Donation', 'Volunteering Your Expertise'].map(item => (
+                                                <li key={item} className="flex items-center gap-3 text-navy font-bold">
+                                                    <span className="material-symbols-outlined text-primary">check_circle</span>
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <Link to="/donate" className="flex items-center justify-center h-14 bg-primary text-white font-black rounded-xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                                            Donate to this Fund
+                                        </Link>
+                                    </div>
+                                </FadeIn>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                {/* Content Sections */}
-                <section className="py-20 px-6 lg:px-20 bg-white">
-                    <div className="max-w-5xl mx-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-                            <FadeIn direction="right">
-                                <h2 className="text-navy text-4xl font-black mb-8">Program Roadmap</h2>
-                                <div className="space-y-12 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-100">
-                                    {program.milestones.map((m, i) => (
-                                        <div key={i} className="relative pl-12 group">
-                                            <div className="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-white border-2 border-primary group-hover:bg-primary transition-colors" />
-                                            <div className="text-primary font-black text-xs mb-1 uppercase tracking-widest">{m.year}</div>
-                                            <p className="text-navy font-bold leading-relaxed">{m.event}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </FadeIn>
-
-                            <FadeIn direction="left">
-                                <div className="bg-background-light p-10 rounded-3xl border border-slate-200">
-                                    <h3 className="text-navy text-2xl font-black mb-6">How You Can Help</h3>
-                                    <p className="text-slate-600 mb-8 leading-relaxed">Your support enables us to scale this program and reach more communities. 100% of your donation toward this fund goes directly to the project costs.</p>
-                                    <ul className="space-y-4 mb-10">
-                                        {['Direct Financial Support', 'Equipment Donation', 'Volunteering Your Expertise'].map(item => (
-                                            <li key={item} className="flex items-center gap-3 text-navy font-bold">
-                                                <span className="material-symbols-outlined text-primary">check_circle</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <Link to="/donate" className="flex items-center justify-center h-14 bg-primary text-white font-black rounded-xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
-                                        Donate to this Fund
-                                    </Link>
-                                </div>
-                            </FadeIn>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Navigation Back */}
-                <section className="py-20 px-6 bg-background-light text-center border-t border-slate-100">
-                    <FadeIn direction="up">
-                        <Link to="/programs" className="inline-flex items-center gap-2 text-navy font-bold hover:text-primary transition-colors">
-                            <span className="material-symbols-outlined">arrow_back</span>
-                            Back to All Programs
-                        </Link>
-                    </FadeIn>
-                </section>
-            </main>
+                    {/* Navigation Back */}
+                    <section className="py-20 px-6 bg-transparent text-center border-t border-slate-100">
+                        <FadeIn direction="up">
+                            <Link to="/programs" className="inline-flex items-center gap-2 text-navy font-bold hover:text-primary transition-colors">
+                                <span className="material-symbols-outlined">arrow_back</span>
+                                Back to All Programs
+                            </Link>
+                        </FadeIn>
+                    </section>
+                </main>
+            </div>
             <Footer />
         </div>
     );

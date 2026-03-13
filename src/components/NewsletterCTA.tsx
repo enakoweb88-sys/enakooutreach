@@ -3,7 +3,7 @@ import FadeIn from './FadeIn';
 
 const NewsletterCTA = () => {
     return (
-        <section className="bg-slate-50 py-24 px-6 md:px-12 overflow-hidden">
+        <section className="bg-transparent py-24 px-6 md:px-12 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="relative rounded-[3rem] bg-navy p-12 md:p-20 overflow-hidden shadow-2xl">
                     {/* Background Detail */}

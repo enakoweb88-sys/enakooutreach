@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { motion, useSpring, useTransform, useInView } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import FadeIn from './FadeIn';
 
@@ -28,15 +28,7 @@ const ImpactDashboard: React.FC = () => {
     ];
 
     return (
-        <section className="py-24 px-6 md:px-16 bg-white overflow-hidden relative">
-            {/* Subtle animated background dots */}
-            <div className="absolute inset-0 pointer-events-none opacity-30"
-                style={{
-                    backgroundImage: 'radial-gradient(circle, #D4AF3720 1px, transparent 1px)',
-                    backgroundSize: '36px 36px'
-                }}
-            />
-
+        <section className="py-24 px-6 md:px-16 bg-transparent overflow-hidden relative">
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 

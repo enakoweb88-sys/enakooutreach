@@ -4,7 +4,7 @@ import FadeIn from './FadeIn';
 
 const TransparencySection = () => {
     return (
-        <section className="py-20 px-6 lg:px-20 bg-white overflow-hidden">
+        <section className="py-20 px-6 lg:px-20 bg-transparent overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
                 {/* Image with overlay */}
                 <div className="lg:w-1/2 w-full">

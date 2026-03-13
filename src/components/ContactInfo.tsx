@@ -21,7 +21,7 @@ const ContactInfo = () => {
     ];
 
     return (
-        <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto bg-transparent">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                 {infoItems.map((item) => (
                     <div key={item.title} className="flex flex-col items-center text-center space-y-4 p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 transition-all hover:shadow-xl group">

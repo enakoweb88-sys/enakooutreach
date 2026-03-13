@@ -37,7 +37,7 @@ const BeneficiaryStories = () => {
     const story = stories[current];
 
     return (
-        <section className="py-24 px-6 md:px-16 bg-[#FAFAFA] overflow-hidden">
+        <section className="py-24 px-6 md:px-16 bg-transparent overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <FadeIn direction="up">

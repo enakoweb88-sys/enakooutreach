@@ -46,7 +46,7 @@ const programDetails = [
 
 const ProgramsOverview = () => {
     return (
-        <section className="py-20 px-6 lg:px-20 bg-background-light overflow-hidden">
+        <section className="py-20 px-6 lg:px-20 bg-transparent overflow-hidden">
             <div className="max-w-7xl mx-auto space-y-24">
                 {programDetails.map((prog, idx) => (
                     <div

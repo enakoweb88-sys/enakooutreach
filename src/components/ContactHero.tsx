@@ -1,6 +1,6 @@
 const ContactHero = () => {
     return (
-        <section className="relative py-24 pt-36 px-6 md:px-12 bg-navy dark:bg-slate-950 overflow-hidden text-center">
+        <section className="relative py-24 pt-36 px-6 md:px-12 bg-transparent dark:bg-slate-950 overflow-hidden text-center">
             <div className="absolute inset-0 z-0 ">
                 <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-[160px] -translate-x-1/2 -translate-y-1/2"></div>
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-[160px] translate-x-1/2 translate-y-1/2"></div>

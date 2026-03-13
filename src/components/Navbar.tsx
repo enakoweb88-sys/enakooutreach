@@ -78,8 +78,8 @@ const Navbar = () => {
             {/* Fixed Navbar */}
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isTransparent
-                        ? 'bg-transparent py-5'
-                        : 'bg-white/95 backdrop-blur-xl shadow-lg shadow-navy/5 border-b border-slate-100 py-3'
+                    ? 'bg-transparent py-5'
+                    : 'bg-white/95 backdrop-blur-xl shadow-lg shadow-navy/5 border-b border-slate-100 py-3'
                     }`}
             >
                 <div className="container mx-auto px-5 md:px-10 flex items-center justify-between">
@@ -110,10 +110,10 @@ const Navbar = () => {
                                 <Link
                                     to={link.href}
                                     className={`px-4 py-2.5 text-sm font-black transition-all duration-300 rounded-xl flex items-center gap-1.5 ${location.pathname === link.href || (link.dropdown && link.dropdown.some(d => d.items.some(i => i.href === location.pathname)))
-                                            ? 'text-primary bg-primary/5'
-                                            : isTransparent
-                                                ? 'text-white/90 hover:text-white hover:bg-white/10'
-                                                : 'text-navy hover:text-primary hover:bg-slate-50'
+                                        ? 'text-primary bg-primary/5'
+                                        : isTransparent
+                                            ? 'text-white/90 hover:text-white hover:bg-white/10'
+                                            : 'text-navy hover:text-primary hover:bg-slate-50'
                                         }`}
                                 >
                                     {link.name}
@@ -187,8 +187,8 @@ const Navbar = () => {
                         <Link
                             to="/donate"
                             className={`hidden sm:flex items-center justify-center rounded-2xl h-11 px-7 font-black text-sm tracking-wide transition-all duration-300 ${isTransparent
-                                    ? 'bg-white text-primary hover:bg-slate-50 hover:scale-105'
-                                    : 'bg-primary text-white shadow-lg shadow-primary/30 hover:scale-105 active:scale-95'
+                                ? 'bg-white text-primary hover:bg-slate-50 hover:scale-105'
+                                : 'bg-primary text-white shadow-lg shadow-primary/30 hover:scale-105 active:scale-95'
                                 }`}
                         >
                             Donate
@@ -197,8 +197,8 @@ const Navbar = () => {
                         {/* Mobile Hamburger — positioned naturally in header */}
                         <button
                             className={`lg:hidden w-12 h-12 flex items-center justify-center rounded-2xl transition-all duration-300 active:scale-90 ${isTransparent && !isMobileMenuOpen
-                                    ? 'text-white bg-white/15 border border-white/30'
-                                    : 'text-navy bg-slate-100 border border-slate-200'
+                                ? 'text-white bg-white/15 border border-white/30'
+                                : 'text-navy bg-slate-100 border border-slate-200'
                                 }`}
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             aria-label="Toggle Menu"
@@ -262,7 +262,7 @@ const Navbar = () => {
 
                             {/* Nav Links */}
                             <div className="flex-1 overflow-y-auto px-5 py-4">
-                                {navLinks.map((link, idx) => (
+                                {navLinks.map((link) => (
                                     <div key={link.name}>
                                         {link.dropdown ? (
                                             <div className="mb-1">
@@ -315,8 +315,8 @@ const Navbar = () => {
                                             <Link
                                                 to={link.href}
                                                 className={`flex items-center justify-between py-3.5 px-4 rounded-2xl mb-1 text-lg font-black transition-colors ${location.pathname === link.href
-                                                        ? 'text-primary bg-primary/5'
-                                                        : 'text-navy hover:bg-slate-50'
+                                                    ? 'text-primary bg-primary/5'
+                                                    : 'text-navy hover:bg-slate-50'
                                                     }`}
                                                 onClick={() => setIsMobileMenuOpen(false)}
                                             >

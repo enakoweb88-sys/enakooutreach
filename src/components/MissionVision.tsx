@@ -1,11 +1,9 @@
 import { Target, Eye, CheckCircle2, Sparkles } from 'lucide-react';
 import FadeIn from './FadeIn';
-import AnimatedNetworkBg from './AnimatedNetworkBg';
 
 const MissionVision = () => {
     return (
-        <section className="bg-background-light flex flex-col items-center px-6 py-16 md:px-20 lg:px-40 relative overflow-hidden">
-            <AnimatedNetworkBg particleCount={40} />
+        <section className="bg-transparent flex flex-col items-center px-6 py-16 md:px-20 lg:px-40 relative overflow-hidden">
             <div className="relative z-10 w-full flex flex-col items-center">
                 {/* Header */}
                 <FadeIn direction="up">

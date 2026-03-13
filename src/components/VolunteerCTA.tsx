@@ -5,16 +5,7 @@ import FadeIn from './FadeIn';
 
 const VolunteerCTA = () => {
     return (
-        <section className="py-24 px-6 md:px-16 bg-white overflow-hidden relative">
-            {/* Faint dot grid background */}
-            <div
-                className="absolute inset-0 pointer-events-none opacity-25"
-                style={{
-                    backgroundImage: 'radial-gradient(circle, #0A0F2C15 1px, transparent 1px)',
-                    backgroundSize: '28px 28px',
-                }}
-            />
-
+        <section className="py-24 px-6 md:px-16 bg-transparent overflow-hidden relative">
             {/* Ghost text */}
             <div className="absolute inset-0 flex items-center justify-end pr-8 pointer-events-none overflow-hidden select-none">
                 <span className="text-[15vw] font-black text-slate-50 tracking-tighter whitespace-nowrap">Join</span>
