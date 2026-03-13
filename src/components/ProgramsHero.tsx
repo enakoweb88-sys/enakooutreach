@@ -24,7 +24,7 @@ const ProgramsHero = () => {
                             <span className="material-symbols-outlined text-sm">chevron_right</span>
                             <span className="text-white font-medium">Programs</span>
                         </nav>
-                        <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+                        <h1 className="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6">
                             Our Programs<br />
                             Creating <span className="text-primary italic">Lasting</span><br />
                             Impact

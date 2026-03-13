@@ -22,7 +22,7 @@ const ImpactHero = () => {
                             <span className="size-2 rounded-full bg-primary animate-pulse"></span>
                             Impact Report 2024
                         </div>
-                        <h1 className="text-navy dark:text-white text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tighter">
+                        <h1 className="text-navy dark:text-white text-4xl md:text-6xl font-black leading-[1.1] tracking-tighter">
                             Measuring Change. <br />
                             <span className="text-primary">Sharing Progress.</span>
                         </h1>

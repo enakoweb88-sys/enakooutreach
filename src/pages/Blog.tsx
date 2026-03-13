@@ -27,7 +27,7 @@ const Blog = () => {
                 <section className="container mx-auto px-6 mb-20 text-center">
                     <FadeIn direction="up">
                         <span className="text-primary font-black tracking-[0.4em] uppercase text-[10px] block mb-6">Enako Insights</span>
-                        <h1 className="text-navy text-6xl md:text-8xl font-black leading-none tracking-tighter mb-8 italic">
+                        <h1 className="text-navy text-4xl md:text-6xl font-black leading-none tracking-tighter mb-8 italic">
                             The Cameroon <br />
                             <span className="text-primary not-italic">Perspective.</span>
                         </h1>
