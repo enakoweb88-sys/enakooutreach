@@ -2,7 +2,7 @@ import FadeIn from './FadeIn';
 
 const ImpactHero = () => {
     return (
-        <section className="relative h-[85vh] min-h-[600px] w-full overflow-hidden">
+        <section className="relative h-[85vh] min-h-[600px] w-full overflow-hidden pt-20">
             {/* Background Image with Gradient Overlays */}
             <div className="absolute inset-0 z-0">
                 <img

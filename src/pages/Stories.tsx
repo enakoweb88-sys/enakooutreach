@@ -44,7 +44,7 @@ const StoriesPage = () => {
             <Navbar />
             <main className="flex-grow">
                 {/* HERO */}
-                <section className="relative w-full min-h-[75vh] flex flex-col overflow-hidden bg-navy">
+                <section className="relative w-full min-h-[75vh] flex flex-col overflow-hidden bg-navy pt-20">
                     <div className="absolute inset-0 z-0">
                         <motion.div
                             initial={{ scale: 1.1, opacity: 0 }}

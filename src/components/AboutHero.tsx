@@ -6,7 +6,7 @@ const AboutHero = () => {
     return (
         <>
             {/* Full-bleed Hero */}
-            <section className="relative w-full h-[75vh] min-h-[550px] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+            <section className="relative w-full h-[75vh] min-h-[550px] flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-20">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-navy/60 z-10" />
                     <img

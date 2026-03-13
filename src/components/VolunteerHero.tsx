@@ -2,7 +2,7 @@ import FadeIn from './FadeIn';
 
 const VolunteerHero = () => {
     return (
-        <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden pt-20">
             <div className="absolute inset-0 z-0">
                 <img
                     alt="Volunteers working with children in a sunny outdoor setting"

@@ -5,7 +5,7 @@ const ProgramsHero = () => {
     return (
         <>
             {/* Full-bleed Hero */}
-            <section className="relative w-full min-h-[60vh] flex flex-col items-start justify-end overflow-hidden pb-16">
+            <section className="relative w-full min-h-[60vh] flex flex-col items-start justify-end overflow-hidden pb-16 pt-20">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-black/60 z-10" />
                     <img
