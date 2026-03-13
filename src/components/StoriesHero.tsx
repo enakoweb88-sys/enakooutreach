@@ -18,7 +18,7 @@ const StoriesHero = () => {
                         <span className="material-symbols-outlined text-sm">auto_stories</span>
                         Human Impact
                     </div>
-                    <h1 className="text-5xl md:text-8xl font-black leading-[1.05] tracking-tighter mb-6">
+                    <h1 className="text-4xl md:text-6xl font-black leading-[1.05] tracking-tighter mb-6">
                         Real Stories. <br />
                         <span className="text-primary italic">Real Change.</span>
                     </h1>

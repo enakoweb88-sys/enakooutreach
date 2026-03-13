@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import FadeIn from './FadeIn';
 
 const VolunteerHero = () => {
@@ -20,20 +19,12 @@ const VolunteerHero = () => {
                         <span className="material-symbols-outlined text-sm">volunteer_activism</span>
                         Join Our Mission
                     </div>
-                    <h1 className="text-5xl md:text-8xl font-black leading-tight tracking-tighter">
+                    <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tighter">
                         Make a <span className="text-primary italic">Difference</span> Today.
                     </h1>
                     <p className="text-slate-200 text-lg md:text-2xl font-medium leading-relaxed max-w-2xl mx-auto ">
                         Enako Outreach relies on the passion and skills of volunteers like you to empower communities across Africa.
                     </p>
-                    <div className="flex flex-wrap gap-4 justify-center pt-4">
-                        <Link to="/school-registration" className="flex min-w-[200px] items-center justify-center rounded-2xl h-16 px-10 bg-primary text-white text-xs font-black uppercase tracking-[0.2em] shadow-2xl shadow-primary/40 hover:scale-105 active:scale-95 transition-all">
-                            Apply Now
-                        </Link>
-                        <Link to="/about" className="flex min-w-[200px] items-center justify-center rounded-2xl h-16 px-10 border border-white/20 bg-white/5 backdrop-blur-md text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all group">
-                            Learn More
-                        </Link>
-                    </div>
                 </FadeIn>
             </div>
         </section>

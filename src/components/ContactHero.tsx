@@ -11,7 +11,7 @@ const ContactHero = () => {
                     <span className="material-symbols-outlined text-sm">alternate_email</span>
                     Connect With Us
                 </div>
-                <h1 className="text-white text-5xl md:text-8xl font-black leading-tight tracking-tighter">
+                <h1 className="text-white text-4xl md:text-6xl font-black leading-tight tracking-tighter">
                     Get in <span className="text-primary italic">Touch</span>.
                 </h1>
                 <p className="text-slate-300 text-lg md:text-2xl font-medium leading-relaxed max-w-2xl mx-auto">

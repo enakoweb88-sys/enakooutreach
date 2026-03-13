@@ -24,7 +24,7 @@ const ProgramsHero = () => {
                             <span className="material-symbols-outlined text-sm">chevron_right</span>
                             <span className="text-white font-medium">Programs</span>
                         </nav>
-                        <h1 className="text-white text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6">
+                        <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
                             Our Programs<br />
                             Creating <span className="text-primary italic">Lasting</span><br />
                             Impact
@@ -34,14 +34,6 @@ const ProgramsHero = () => {
                         <p className="text-slate-200 text-lg max-w-xl leading-relaxed mb-10">
                             Through education, recognition, and community development, Enako Outreach empowers individuals and transforms communities across Africa.
                         </p>
-                        <div className="flex flex-wrap gap-4">
-                            <a href="#programs" className="flex items-center justify-center gap-2 rounded-lg h-14 px-8 bg-primary text-navy font-bold hover:bg-primary transition-all">
-                                Explore Programs <span className="material-symbols-outlined text-base">keyboard_arrow_down</span>
-                            </a>
-                            <Link to="/impact" className="flex items-center justify-center rounded-lg h-14 px-8 border border-white bg-white border border-white text-white backdrop-blur-sm font-bold hover:bg-white border border-white transition-all">
-                                View Our Impact
-                            </Link>
-                        </div>
                     </FadeIn>
                 </div>
             </section>

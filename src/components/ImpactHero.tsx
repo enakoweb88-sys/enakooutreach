@@ -1,4 +1,3 @@
-import Button from './Button';
 import FadeIn from './FadeIn';
 
 const ImpactHero = () => {
@@ -23,21 +22,13 @@ const ImpactHero = () => {
                             <span className="size-2 rounded-full bg-primary animate-pulse"></span>
                             Impact Report 2024
                         </div>
-                        <h1 className="text-navy dark:text-white text-5xl md:text-8xl font-extrabold leading-[1.1] tracking-tighter">
+                        <h1 className="text-navy dark:text-white text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tighter">
                             Measuring Change. <br />
                             <span className="text-primary">Sharing Progress.</span>
                         </h1>
                         <p className="text-navy dark:text-slate-300 text-lg md:text-xl font-medium leading-relaxed max-w-lg">
                             A premium humanitarian foundation dedicated to elevating education and sustainable community development across the African continent.
                         </p>
-                        <div className="flex flex-wrap gap-4 pt-4">
-                            <Button variant="primary" size="lg" className="min-w-[180px]">
-                                View Our Progress
-                            </Button>
-                            <Button variant="outline" size="lg" className="min-w-[180px]">
-                                Read Annual Report
-                            </Button>
-                        </div>
                     </div>
                 </FadeIn>
 

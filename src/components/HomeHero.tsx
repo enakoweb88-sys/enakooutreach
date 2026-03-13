@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { School, Award, Globe, ArrowRight, Play, Sparkles } from 'lucide-react';
+import { School, Award, Globe, ArrowRight, Sparkles } from 'lucide-react';
 import FadeIn from './FadeIn';
 
 const HomeHero = () => {
@@ -36,7 +36,7 @@ const HomeHero = () => {
                         </FadeIn>
 
                         <FadeIn delay={0.2} direction="up">
-                            <h1 className="text-white text-5xl sm:text-6xl md:text-9xl font-black leading-[0.85] tracking-tighter break-words">
+                            <h1 className="text-white text-4xl sm:text-5xl md:text-7xl font-black leading-[0.9] tracking-tighter break-words">
                                 Empowering <br />
                                 <span className="text-primary italic">Futures.</span>
                             </h1>
@@ -48,16 +48,6 @@ const HomeHero = () => {
                             </p>
                         </FadeIn>
 
-                        <FadeIn delay={0.4} direction="up">
-                            <div className="flex flex-wrap gap-6 pt-6">
-                                <Link to="/donate" className="group relative flex min-w-[200px] items-center justify-center overflow-hidden rounded-2xl h-20 px-10 bg-primary text-white text-xs font-black uppercase tracking-[0.2em] shadow-2xl shadow-primary/40 hover:scale-105 active:scale-95 transition-all">
-                                    Donate Now
-                                </Link>
-                                <Link to="/impact" className="flex min-w-[200px] items-center justify-center rounded-2xl h-20 px-10 border border-white/20 bg-white/5 backdrop-blur-md text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all group">
-                                    Our Impact <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </Link>
-                            </div>
-                        </FadeIn>
 
                         <FadeIn delay={0.5} direction="up" className="pt-12">
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-12 pt-12 border-t border-white/10">
@@ -78,13 +68,6 @@ const HomeHero = () => {
                     </div>
                 </div>
 
-                {/* Floating Video Link */}
-                <FadeIn delay={0.6} direction="left" className="absolute bottom-12 right-12 hidden xl:flex flex-col gap-6 z-20 items-center">
-                    <button className="w-20 h-20 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary backdrop-blur-xl hover:bg-primary hover:text-white transition-all duration-500 group shadow-2xl">
-                        <Play className="w-6 h-6 fill-current ml-1 group-hover:scale-110 transition-transform" />
-                    </button>
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 rotate-90 mt-10 origin-center whitespace-nowrap">Watch Film</span>
-                </FadeIn>
             </section>
 
             {/* FEATURES SECTION OVERHAUL */}

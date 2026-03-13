@@ -174,7 +174,7 @@ const Navbar = () => {
                         Donate
                     </Link>
                     <button
-                        className={`lg:hidden w-12 h-12 flex items-center justify-center rounded-xl transition-all active:scale-90 ${isScrolled || !isHome
+                        className={`lg:hidden w-12 h-12 flex items-center justify-center rounded-xl transition-all active:scale-90 z-[70] ${isScrolled || !isHome || isMobileMenuOpen
                             ? 'text-navy bg-slate-100'
                             : 'text-white bg-white/10 backdrop-blur-md border border-white/20'}`}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

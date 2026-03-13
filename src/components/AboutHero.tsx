@@ -25,7 +25,7 @@ const AboutHero = () => {
                         </div>
                     </FadeIn>
                     <FadeIn direction="up" delay={0.2}>
-                        <h1 className="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight">
+                        <h1 className="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight">
                             Driven by Purpose.<br />
                             <span className="text-primary">Guided by Impact.</span>
                         </h1>
@@ -34,16 +34,6 @@ const AboutHero = () => {
                         <p className="text-slate-200 text-lg md:text-xl font-normal max-w-2xl leading-relaxed mx-auto">
                             Empowering communities and advancing education across Cameroon through sustainable humanitarian initiatives that foster growth and resilience from our base in Douala.
                         </p>
-                    </FadeIn>
-                    <FadeIn direction="up" delay={0.4}>
-                        <div className="flex flex-col sm:flex-row gap-4 mt-4 justify-center">
-                            <Link to="/stories" className="flex items-center justify-center rounded-lg h-14 px-8 bg-primary text-navy text-base font-bold hover:bg-primary hover:shadow-lg shadow-primary/20 transition-all">
-                                Learn Our Story
-                            </Link>
-                            <Link to="/impact" className="flex items-center justify-center rounded-lg h-14 px-8 border border-white bg-white border border-white text-white backdrop-blur-sm text-base font-bold hover:bg-white border border-white transition-all">
-                                Our Impact Report
-                            </Link>
-                        </div>
                     </FadeIn>
                 </div>
             </section>
