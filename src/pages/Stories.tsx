@@ -65,7 +65,7 @@ const StoriesPage = () => {
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8">
                                 <BookOpen className="w-3 h-3" /> Community Narratives
                             </div>
-                            <h1 className="text-white text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8 max-w-4xl">
+                            <h1 className="text-white text-4xl md:text-6xl font-black leading-[0.9] tracking-tighter mb-8 max-w-4xl">
                                 Voices of <br />
                                 <span className="text-primary italic">Transformation.</span>
                             </h1>

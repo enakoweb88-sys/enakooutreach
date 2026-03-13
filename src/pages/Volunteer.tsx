@@ -34,7 +34,7 @@ const VolunteerPage = () => {
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8">
                                 <Users className="w-3 h-3" /> Volunteer Opportunity
                             </div>
-                            <h2 className="text-white text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8 max-w-4xl">
+                            <h2 className="text-white text-4xl md:text-6xl font-black leading-[0.9] tracking-tighter mb-8 max-w-4xl">
                                 Be Part of <br />
                                 <span className="text-primary italic">the Change.</span>
                             </h2>
@@ -85,7 +85,7 @@ const VolunteerPage = () => {
                     <div className="max-w-7xl mx-auto">
                         <div className="flex flex-col items-center text-center mb-20">
                             <span className="text-primary font-black tracking-[0.4em] uppercase text-[10px] block mb-6">Ways to Act</span>
-                            <h2 className="text-navy text-5xl md:text-7xl font-black tracking-tighter leading-none mb-8">
+                            <h2 className="text-navy text-4xl md:text-6xl font-black tracking-tighter leading-none mb-8">
                                 Where We <span className="text-primary italic">Need You.</span>
                             </h2>
                             <div className="w-24 h-2 bg-primary rounded-full" />
@@ -118,7 +118,7 @@ const VolunteerPage = () => {
                     <div className="max-w-4xl mx-auto">
                         <div className="flex flex-col items-center text-center mb-20">
                             <span className="text-slate-500 font-black tracking-[0.4em] uppercase text-[10px] block mb-6">Join the Mission</span>
-                            <h2 className="text-navy text-5xl md:text-7xl font-black tracking-tighter leading-none mb-8 italic">Application.</h2>
+                            <h2 className="text-navy text-4xl md:text-6xl font-black tracking-tighter leading-none mb-8 italic">Application.</h2>
                             <p className="text-slate-500 font-medium max-w-xl">We'll review your application and respond with potential placements within 48 hours.</p>
                         </div>
 
@@ -201,7 +201,7 @@ const VolunteerPage = () => {
                 <section className="py-32 px-6 bg-navy text-center relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
                     <FadeIn direction="up">
-                        <h2 className="text-white text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-none">
+                        <h2 className="text-white text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-none">
                             Ready to <span className="text-primary italic">Act?</span>
                         </h2>
                         <p className="text-slate-400 max-w-xl mx-auto mb-16 text-xl font-medium leading-relaxed">

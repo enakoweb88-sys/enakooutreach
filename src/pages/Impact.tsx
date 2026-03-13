@@ -41,7 +41,7 @@ const ImpactPage = () => {
                     </div>
                     <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-20 w-full pt-32 pb-16">
                         <span className="text-primary font-black tracking-[0.4em] uppercase text-[10px] block mb-6">Measurable Change</span>
-                        <h1 className="text-white text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8 max-w-4xl">
+                        <h1 className="text-white text-4xl md:text-6xl font-black leading-[0.9] tracking-tighter mb-8 max-w-4xl">
                             Driving Real <span className="text-primary italic">Transformation.</span>
                         </h1>
                         <p className="text-slate-300 text-xl font-medium max-w-xl leading-relaxed mb-12">
@@ -64,7 +64,7 @@ const ImpactPage = () => {
                     <div className="max-w-7xl mx-auto">
                         <div className="flex flex-col items-center mb-20">
                             <span className="text-primary font-black tracking-[0.4em] uppercase text-[10px] block mb-6">Our Numbers</span>
-                            <h2 className="text-navy text-5xl md:text-7xl font-black tracking-tighter">Impact in <span className="text-primary italic">Focus.</span></h2>
+                            <h2 className="text-navy text-4xl md:text-6xl font-black tracking-tighter">Impact in <span className="text-primary italic">Focus.</span></h2>
                             <div className="w-24 h-2 bg-primary mt-8 rounded-full" />
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 animate-in fade-in duration-1000">
