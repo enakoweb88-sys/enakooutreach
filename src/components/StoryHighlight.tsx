@@ -1,44 +1,121 @@
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import FadeIn from './FadeIn';
+const reviews = [
+    {
+        quote: 'Enako Outreach is doing what governments have failed to do for decades. Their scholarship programme transformed my daughter\'s life and gave our entire family hope. I proud to have been part of this mission.',
+        name: 'Mariam Fon',
+        title: 'Parent — Bamenda, Cameroon',
+        image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&auto=format&fit=crop&q=80',
+    },
+    {
+        quote: 'The teacher award I received through Enako Outreach was more than a prize — it was recognition that my 15 years of dedication in a rural classroom actually mattered. This organisation sees us.',
+        name: 'Emmanuel Nkeng',
+        title: 'Primary School Teacher — Buea',
+        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
+    },
+    {
+        quote: 'I came across Enako Outreach while looking for a cause that truly makes a difference. After just one visit to their impact report, I was fully convinced. Transparent, passionate, and deeply impactful.',
+        name: 'Claire Mbarga',
+        title: 'International Donor & Advocate',
+        image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=80',
+    },
+];
 
 const StoryHighlight = () => {
+    const [current, setCurrent] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrent((c) => (c + 1) % reviews.length);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const prev = () => setCurrent((c) => (c === 0 ? reviews.length - 1 : c - 1));
+    const next = () => setCurrent((c) => (c + 1) % reviews.length);
+
     return (
-        <section className="py-20 px-6 lg:px-20 bg-background-light overflow-hidden">
-            <div className="max-w-7xl mx-auto">
-                <FadeIn direction="up">
-                    <div className="text-center mb-12">
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs block mb-2">Community Voices</span>
-                        <h2 className="text-navy text-4xl font-black">Stories of Impact</h2>
-                    </div>
-                </FadeIn>
-                <div className="rounded-2xl overflow-hidden shadow-xl flex flex-col lg:flex-row">
-                    {/* Image */}
-                    <div className="lg:w-1/2 h-72 lg:h-auto w-full">
-                        <FadeIn direction="right" className="h-full">
-                            <img
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf36m3k6OIJWgQJnMGVHWXJXz5cQVL1FU4mVwbkZ5l0IJarktCFr78ZR2kFmSnxpLVENEXKCAzIinLHE3H4oJFe6MmOPVzf9Sik8nUO7XFujIqsGExm87DQ6IYXM45-r69fvInAFBKOgXq11jSQyWEiNlqZIPMDGjG3dHfzJG7HiwNHQsD_FdNQRIKQ3jVvAbfG4Nxq-bxOK6GRatjfJbshyF7L44Q1JjqjCiQE5QAIHXRXjhUjQAOa9cE2-vn2LOqAYlDCvPOkE"
-                                alt="Student success"
-                                className="w-full h-full object-cover"
+        <section className="relative py-28 px-6 md:px-16 bg-navy overflow-hidden">
+            {/* Ghost text backdrop */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none">
+                <span className="text-[18vw] font-black text-white/[0.03] tracking-tighter whitespace-nowrap">Reviews</span>
+            </div>
+
+            {/* Dot patterns */}
+            <div className="absolute top-8 left-8 w-24 h-24 pointer-events-none opacity-30"
+                style={{ backgroundImage: 'radial-gradient(circle, #D4AF3760 1.5px, transparent 1.5px)', backgroundSize: '12px 12px' }} />
+            <div className="absolute bottom-8 right-8 w-24 h-24 pointer-events-none opacity-30"
+                style={{ backgroundImage: 'radial-gradient(circle, #D4AF3760 1.5px, transparent 1.5px)', backgroundSize: '12px 12px' }} />
+
+            <div className="max-w-4xl mx-auto text-center relative z-10">
+                {/* Section heading */}
+                <div className="mb-12">
+                    <p className="text-slate-400 font-black uppercase tracking-[0.4em] text-[10px] mb-3">Community Voices</p>
+                    <h2 className="text-white text-4xl md:text-5xl font-black leading-tight tracking-tight">
+                        What They Say About{' '}
+                        <span className="text-primary italic">Enako Outreach</span>
+                    </h2>
+                </div>
+
+                {/* Overlapping avatars */}
+                <div className="flex items-center justify-center -space-x-3 mb-12">
+                    {reviews.map((r, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setCurrent(i)}
+                            className={`relative w-14 h-14 rounded-full border-4 overflow-hidden transition-all duration-300 ${i === current ? 'border-primary scale-125 z-10' : 'border-navy/50 opacity-60 hover:opacity-100'}`}
+                        >
+                            <img src={r.image} alt={r.name} className="w-full h-full object-cover"
+                                onError={(e) => { (e.target as HTMLImageElement).src = `https://api.dicebear.com/7.x/avataaars/svg?seed=${r.name}`; }} />
+                        </button>
+                    ))}
+                </div>
+
+                {/* Quote */}
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={current}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.5 }}
+                        className="mb-10"
+                    >
+                        <blockquote className="text-slate-200 text-xl md:text-2xl font-medium leading-relaxed italic mb-8 max-w-3xl mx-auto">
+                            "{reviews[current].quote}"
+                        </blockquote>
+                        <p className="text-white font-black text-lg">{reviews[current].name}</p>
+                        <p className="text-slate-400 text-sm font-medium mt-1">{reviews[current].title}</p>
+                    </motion.div>
+                </AnimatePresence>
+
+                {/* Navigation */}
+                <div className="flex items-center justify-center gap-6">
+                    <button
+                        onClick={prev}
+                        className="w-12 h-12 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white/10 hover:border-white transition-all"
+                    >
+                        <ChevronLeft className="w-5 h-5" />
+                    </button>
+
+                    <div className="flex gap-2">
+                        {reviews.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setCurrent(i)}
+                                className={`rounded-full transition-all duration-300 ${i === current ? 'w-8 h-2.5 bg-primary' : 'w-2.5 h-2.5 bg-white/20'}`}
                             />
-                        </FadeIn>
+                        ))}
                     </div>
-                    {/* Content */}
-                    <div className="lg:w-1/2 p-10 flex flex-col justify-center bg-navy text-white w-full">
-                        <FadeIn direction="left" delay={0.2}>
-                            <span className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-primary border border-primary text-primary text-xs font-bold uppercase mb-6 w-fit">
-                                Student Success
-                            </span>
-                            <blockquote className="text-xl font-medium leading-relaxed mb-6 italic text-slate-200">
-                                "When I was selected as the top student in my district, I never imagined it would open doors I had only dreamed of. The Enako Outreach scholarship didn't just pay my fees — it changed my entire family's trajectory."
-                            </blockquote>
-                            <p className="text-primary font-bold">Abena Osei · Scholarship Recipient</p>
-                            <p className="text-slate-400 text-sm mb-8">Ghana, 2023</p>
-                            <Link to="/stories" className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all w-fit">
-                                Read more stories <span className="material-symbols-outlined text-base">arrow_forward</span>
-                            </Link>
-                        </FadeIn>
-                    </div>
+
+                    <button
+                        onClick={next}
+                        className="w-12 h-12 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white/10 hover:border-white transition-all"
+                    >
+                        <ChevronRight className="w-5 h-5" />
+                    </button>
                 </div>
             </div>
         </section>

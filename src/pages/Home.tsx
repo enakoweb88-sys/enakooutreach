@@ -9,6 +9,7 @@ import AutoExplainerVideo from '../components/AutoExplainerVideo';
 import PartnerLogos from '../components/PartnerLogos';
 import VolunteerCTA from '../components/VolunteerCTA';
 import BeneficiaryStories from '../components/BeneficiaryStories';
+import StoryHighlight from '../components/StoryHighlight';
 import LatestBlog from '../components/LatestBlog';
 import NewsletterCTA from '../components/NewsletterCTA';
 
@@ -19,10 +20,11 @@ const Home = () => {
             <main>
                 <PremiumHeroCarousel />
                 <ProgramsGrid />
-                <AutoExplainerVideo />
                 <ImpactDashboard />
+                <AutoExplainerVideo />
                 <IdeasSection />
                 <BeneficiaryStories />
+                <StoryHighlight />
                 <PartnerLogos />
                 <VolunteerCTA />
                 <VideoShowcase />

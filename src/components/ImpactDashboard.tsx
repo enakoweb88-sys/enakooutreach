@@ -1,167 +1,135 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useSpring, useTransform, useInView } from 'framer-motion';
-import { School, Award, Globe, CheckCircle2, TrendingUp, BarChart3, PieChart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import FadeIn from './FadeIn';
 
-const Counter = ({ value, suffix = "" }: { value: string, suffix?: string }) => {
-    const numericValue = parseInt(value.replace(/,/g, ''));
+const AnimatedBar = ({ pct, color = '#D4AF37' }: { pct: number; color?: string }) => {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true });
-
-    const spring = useSpring(0, { stiffness: 40, damping: 20 });
-    const displayValue = useTransform(spring, (current) =>
-        Math.floor(current).toLocaleString() + suffix
+    return (
+        <div ref={ref} className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+            <motion.div
+                initial={{ width: 0 }}
+                animate={inView ? { width: `${pct}%` } : {}}
+                transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+                className="h-full rounded-full"
+                style={{ backgroundColor: color }}
+            />
+        </div>
     );
-
-    useEffect(() => {
-        if (inView) {
-            spring.set(numericValue);
-        }
-    }, [inView, numericValue, spring]);
-
-    return <motion.span ref={ref}>{displayValue}</motion.span>;
 };
 
 const ImpactDashboard: React.FC = () => {
-    const stats = [
-        { label: "Partner Schools", value: "5", icon: <School className="w-8 h-8" />, trend: "Active" },
-        { label: "Planned Beneficiaries", value: "15,000", icon: <Award className="w-8 h-8" />, trend: "Goal" },
-        { label: "Support Communities", value: "12", icon: <Globe className="w-8 h-8" />, trend: "Phase 1" },
-        { label: "Inaugural Charity", value: "1", icon: <CheckCircle2 className="w-8 h-8" />, trend: "Upcoming" }
+    const metrics = [
+        { label: 'School Outreach Coverage', pct: 86 },
+        { label: 'Teacher Programme Uptake', pct: 78 },
+        { label: 'Community Water Projects', pct: 91 },
+        { label: 'Scholarship Fund Raised', pct: 63 },
     ];
 
     return (
-        <section className="py-32 px-6 md:px-12 bg-navy relative overflow-hidden">
-            {/* Background Accents */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
+        <section className="py-24 px-6 md:px-16 bg-white overflow-hidden relative">
+            {/* Subtle animated background dots */}
+            <div className="absolute inset-0 pointer-events-none opacity-30"
+                style={{
+                    backgroundImage: 'radial-gradient(circle, #D4AF3720 1px, transparent 1px)',
+                    backgroundSize: '36px 36px'
+                }}
+            />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="flex flex-col lg:flex-row items-center justify-between mb-24 gap-12">
-                    <FadeIn direction="right" className="max-w-2xl text-center lg:text-left">
-                        <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">Cameroon Humanitarian Impact</span>
-                        <h2 className="text-white text-5xl md:text-7xl font-black leading-[0.95] tracking-tighter">
-                            Measurable <br />
-                            <span className="text-primary italic">Change</span> in Real-Time
-                        </h2>
-                    </FadeIn>
-                    <FadeIn direction="left" className="max-w-md text-center lg:text-left">
-                        <p className="text-slate-400 text-lg font-medium leading-relaxed">
-                            Transparency is the bedrock of our foundation. We track every initiative with surgical precision to ensure maximum impact for every community we touch.
-                        </p>
-                    </FadeIn>
-                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-24">
-                    {stats.map((stat, i) => (
-                        <FadeIn key={stat.label} direction="up" delay={i * 0.1}>
-                            <div className="group relative p-10 rounded-[3rem] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary transition-all duration-700 text-center overflow-hidden">
-                                <div className="absolute -bottom-6 -right-6 text-white/5 group-hover:text-primary/10 transition-colors duration-700">
-                                    <PieChart className="w-32 h-32" />
-                                </div>
-                                <div className="mb-8 p-4 rounded-2xl bg-white/10 text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 inline-flex">
-                                    {stat.icon}
-                                </div>
-                                <div className="flex items-center justify-center gap-1 mb-2">
-                                    <span className="text-white text-6xl font-black tracking-tighter">
-                                        <Counter value={stat.value} suffix="+" />
-                                    </span>
-                                </div>
-                                <p className="text-slate-400 font-black text-[10px] uppercase tracking-[0.2em] mb-4">{stat.label}</p>
-                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-black italic">
-                                    <TrendingUp className="w-3 h-3" /> {stat.trend} Growth
-                                </div>
-                            </div>
-                        </FadeIn>
-                    ))}
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    {/* LEFT — Text + Stats */}
                     <FadeIn direction="right">
-                        <div className="relative p-12 rounded-[3.5rem] bg-white border border-slate-100 shadow-2xl overflow-hidden h-full">
-                            <div className="flex items-start justify-between mb-12">
-                                <div className="space-y-2">
-                                    <div className="flex items-center gap-2 text-primary font-black uppercase text-[10px] tracking-widest">
-                                        <BarChart3 className="w-4 h-4" /> Impact Scaling
-                                    </div>
-                                    <h3 className="text-navy text-4xl font-black tracking-tight leading-none">Annual Support Growth</h3>
-                                </div>
-                                <div className="text-right">
-                                    <p className="text-primary text-5xl font-black">+45%</p>
-                                    <p className="text-emerald-500 text-[10px] font-black uppercase tracking-widest italic">Exceptional Performance</p>
-                                </div>
+                        <div>
+                            <div className="flex items-center gap-2 mb-5">
+                                <span className="w-2 h-2 rounded-full bg-primary inline-block" />
+                                <span className="text-primary font-black uppercase tracking-[0.3em] text-[10px]">
+                                    OUR EXPERTISE IN ACTION
+                                </span>
                             </div>
 
-                            <div className="flex items-end justify-between h-64 gap-6 px-4">
-                                {[40, 65, 50, 90, 100].map((height, i) => (
-                                    <div key={i} className="flex-1 flex flex-col items-center gap-6 group">
-                                        <div className="relative w-full h-full flex items-end">
-                                            <motion.div
-                                                initial={{ height: 0 }}
-                                                whileInView={{ height: `${height}%` }}
-                                                viewport={{ once: true }}
-                                                transition={{ duration: 1.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                                                className={`w-full rounded-2xl relative transition-all duration-700 ${i === 4 ? 'bg-primary shadow-2xl shadow-primary/40' : 'bg-slate-100 group-hover:bg-slate-200'}`}
-                                            >
-                                                <div className="absolute top-4 left-1/2 -translate-x-1/2 text-navy/20 font-black text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">
-                                                    {height}%
-                                                </div>
-                                            </motion.div>
+                            <h2 className="text-navy text-4xl md:text-5xl font-black leading-tight tracking-tight mb-5">
+                                Cameroon Humanitarian Impact —{' '}
+                                <span className="text-primary italic">Measurable</span> Change in Real‑Time
+                            </h2>
+
+                            <p className="text-slate-500 text-base leading-relaxed mb-10 max-w-lg">
+                                At Enako Outreach, we track every initiative with rigorous precision. Transparency is the bedrock of our foundation — here's what we're building:
+                            </p>
+
+                            <div className="space-y-7">
+                                {metrics.map((m, i) => (
+                                    <motion.div
+                                        key={m.label}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.12 }}
+                                    >
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-navy font-bold text-sm">{m.label}</span>
+                                            <span className="text-primary font-black text-sm">{m.pct}%</span>
                                         </div>
-                                        <span className={`text-[10px] font-black tracking-widest uppercase ${i === 4 ? 'text-primary' : 'text-slate-400'}`}>202{i}</span>
-                                    </div>
+                                        <AnimatedBar pct={m.pct} />
+                                    </motion.div>
                                 ))}
+                            </div>
+
+                            <div className="mt-10 flex flex-wrap gap-4">
+                                <Link
+                                    to="/impact"
+                                    className="px-8 py-4 bg-primary text-white font-black text-sm uppercase tracking-widest rounded-2xl hover:bg-primary/90 hover:scale-105 transition-all shadow-xl shadow-primary/30"
+                                >
+                                    View Full Report
+                                </Link>
+                                <Link
+                                    to="/volunteer"
+                                    className="px-8 py-4 border-2 border-navy text-navy font-black text-sm uppercase tracking-widest rounded-2xl hover:bg-navy hover:text-white transition-all"
+                                >
+                                    Get Involved
+                                </Link>
                             </div>
                         </div>
                     </FadeIn>
 
-                    <FadeIn direction="left">
-                        <div className="relative p-12 rounded-[3.5rem] bg-white border border-slate-100 shadow-2xl overflow-hidden h-full flex flex-col">
-                            <div className="flex items-start justify-between mb-12">
-                                <div className="space-y-2">
-                                    <div className="flex items-center gap-2 text-primary font-black uppercase text-[10px] tracking-widest">
-                                        <Globe className="w-4 h-4" /> Regional Reach
-                                    </div>
-                                    <h3 className="text-navy text-4xl font-black tracking-tight leading-none">Operational Health</h3>
-                                </div>
-                                <div className="text-right">
-                                    <p className="text-navy text-5xl font-black">98%</p>
-                                    <p className="text-primary text-[10px] font-black uppercase tracking-widest italic tracking-tighter">Efficiency Target Met</p>
-                                </div>
+                    {/* RIGHT — circular photo + accent shape */}
+                    <FadeIn direction="left" delay={0.2}>
+                        <div className="relative flex items-center justify-center">
+                            {/* Blue accent shape bottom-right */}
+                            <div className="absolute bottom-0 right-0 w-48 h-48 bg-primary rounded-tl-[80px] rounded-br-[16px] z-0 translate-x-8 translate-y-8 opacity-20" />
+
+                            {/* Circular image */}
+                            <div className="relative z-10 w-[340px] h-[340px] md:w-[420px] md:h-[420px] rounded-full overflow-hidden border-4 border-primary/20 shadow-[0_40px_100px_-20px_rgba(10,15,44,0.2)]">
+                                <img
+                                    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80"
+                                    alt="Cameroonian children in school"
+                                    className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-1000"
+                                    onError={(e) => {
+                                        (e.target as HTMLImageElement).src = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDZUyPMKzz97KSXoff8blkwYi-7OlEWfpoD7t_PzsC61jWkhj2aoRMySVto9QQdrpY6f7EYh6a4cqHsnm-o3zeNtfs3uG6QeFsyeH15m5nhO8m8-JntiIrj_aD55jYw7DAz7WRb9J9GXjUNmpAzlZH9UZn5AuWADN73TVPg2IN3yNxHwM3D4orshsXqwqsklVQb4kGch5pjGy6PlBqOeRViKw-YNjbBYm141n0bGV5EL3cj8pQ8y_Tmkk6hX9h7fnXuv9ttgJeFjV4';
+                                    }}
+                                />
                             </div>
 
-                            <div className="flex-grow flex items-center justify-center p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
-                                <div className="w-full max-w-sm aspect-square relative flex items-center justify-center">
-                                    <div className="absolute inset-0 rounded-full border-[20px] border-slate-200" />
-                                    <svg className="w-full h-full -rotate-90">
-                                        <motion.circle
-                                            cx="50%" cy="50%" r="45%"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            className="text-primary"
-                                            strokeWidth="20"
-                                            strokeDasharray="100 100"
-                                            initial={{ strokeDashoffset: 100 }}
-                                            whileInView={{ strokeDashoffset: 2 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
-                                            strokeLinecap="round"
-                                            style={{ filter: 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.3))' }}
-                                        />
-                                    </svg>
-                                    <div className="absolute text-center">
-                                        <span className="text-5xl font-black text-navy block tracking-tighter">98.4%</span>
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Survival Rate</span>
-                                    </div>
-                                </div>
-                            </div>
+                            {/* Floating stat card */}
+                            <motion.div
+                                animate={{ y: [0, -10, 0] }}
+                                transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
+                                className="absolute top-8 -left-4 md:-left-12 bg-white rounded-3xl px-6 py-4 shadow-2xl border border-slate-100 z-20"
+                            >
+                                <p className="text-primary text-3xl font-black tracking-tighter">15k+</p>
+                                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest">Beneficiaries Goal</p>
+                            </motion.div>
 
-                            <div className="mt-8 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
-                                <span>Infrastructure</span>
-                                <div className="h-px bg-slate-100 flex-grow mx-4" />
-                                <span>Education</span>
-                                <div className="h-px bg-slate-100 flex-grow mx-4" />
-                                <span>Health</span>
-                            </div>
+                            <motion.div
+                                animate={{ y: [0, 10, 0] }}
+                                transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut', delay: 1 }}
+                                className="absolute bottom-16 -right-4 md:-right-10 bg-navy rounded-3xl px-6 py-4 shadow-2xl z-20"
+                            >
+                                <p className="text-white text-3xl font-black tracking-tighter">5</p>
+                                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest">Partner Schools</p>
+                            </motion.div>
                         </div>
                     </FadeIn>
                 </div>

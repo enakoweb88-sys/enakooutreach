@@ -1,92 +1,111 @@
 import { Link } from 'react-router-dom';
-import { Users, PlayCircle, ArrowRight, Heart } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 
 const VolunteerCTA = () => {
     return (
-        <section className="bg-white py-32 px-6 md:px-12 overflow-hidden">
-            <div className="max-w-7xl mx-auto">
-                <div className="relative rounded-[4rem] bg-navy p-12 md:p-24 overflow-hidden">
-                    {/* Background Pattern */}
-                    <div className="absolute inset-0 opacity-10 pointer-events-none">
-                        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent" />
-                        <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-                    </div>
+        <section className="py-24 px-6 md:px-16 bg-white overflow-hidden relative">
+            {/* Faint dot grid background */}
+            <div
+                className="absolute inset-0 pointer-events-none opacity-25"
+                style={{
+                    backgroundImage: 'radial-gradient(circle, #0A0F2C15 1px, transparent 1px)',
+                    backgroundSize: '28px 28px',
+                }}
+            />
 
-                    <div className="relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-                        <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
-                            <FadeIn direction="right">
-                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-10">
-                                    <Users className="w-3 h-3" /> Community First
-                                </div>
-                                <h2 className="text-white text-5xl md:text-7xl font-black leading-[0.9] tracking-tighter mb-8">
-                                    Join the <br />
-                                    <span className="text-primary italic">Movement.</span>
-                                </h2>
-                                <p className="text-slate-400 text-xl font-medium leading-relaxed max-w-lg mb-12">
-                                    Your time and talent can change the course of a child's future. Join our global network of volunteers and build stronger communities.
-                                </p>
+            {/* Ghost text */}
+            <div className="absolute inset-0 flex items-center justify-end pr-8 pointer-events-none overflow-hidden select-none">
+                <span className="text-[15vw] font-black text-slate-50 tracking-tighter whitespace-nowrap">Join</span>
+            </div>
 
-                                <div className="flex flex-wrap gap-6 items-center">
-                                    <Link
-                                        to="/volunteer"
-                                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-navy font-black text-sm uppercase tracking-widest rounded-2xl hover:bg-primary hover:text-white transition-all transform hover:scale-105 shadow-2xl shadow-white/5"
-                                    >
-                                        Apply Now <ArrowRight className="w-4 h-4" />
-                                    </Link>
-                                    <Link
-                                        to="/impact"
-                                        className="inline-flex items-center gap-3 text-white font-black text-sm uppercase tracking-widest group"
-                                    >
-                                        <PlayCircle className="w-8 h-8 group-hover:text-primary transition-colors" />
-                                        See Our Impact
-                                    </Link>
-                                </div>
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                                <div className="mt-16 pt-16 border-t border-white/10 grid grid-cols-2 md:grid-cols-3 gap-8 w-full">
-                                    {[
-                                        { value: '500+', label: 'Active Volunteers' },
-                                        { value: '12', label: 'Countries Active' },
-                                        { value: '10k+', label: 'Projected Reach' },
-                                    ].map((s) => (
-                                        <div key={s.label} className="space-y-1">
-                                            <p className="text-3xl font-black text-white tracking-tighter">{s.value}</p>
-                                            <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{s.label}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </FadeIn>
+                    {/* LEFT — Circular image with decorative shapes */}
+                    <FadeIn direction="right">
+                        <div className="relative flex items-center justify-center">
+                            {/* Yellow/green decorative blob */}
+                            <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-primary/20 blur-2xl" />
+                            <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-blue-100 blur-2xl" />
+
+                            {/* Circular photo */}
+                            <div className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden shadow-[0_40px_100px_-20px_rgba(10,15,44,0.15)] border-4 border-white z-10">
+                                <img
+                                    src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=700&auto=format&fit=crop&q=80"
+                                    alt="Volunteer with children"
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                        (e.target as HTMLImageElement).src = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcw8wxpYcYBRL5pXLzflekN0ZSeDZgXPZfP8prs4flNveXRQbXpOwb7I_-2nWDe0cBH3uYJrzYMnjbe1ISIDCgp4VNeM_Lr6i7W3Yet-UvfotldMpB9XlfbSq7Y4ral-63I4O9ZEnQAZg-UJ20y79euxrFznquIVxmYyixWzFSli6fYmnGmNs2BUByUTNMzAobC6Ggrnw1wbiXKhv0QuDrVb6_5kH15OME7yobzgFIkZejAP-QF18TbX2UKHqUxcS8qu7-YYwqRI8';
+                                    }}
+                                />
+                            </div>
+
+                            {/* Floating badge */}
+                            <motion.div
+                                animate={{ y: [0, -8, 0] }}
+                                transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
+                                className="absolute bottom-8 -right-4 bg-white rounded-2xl px-5 py-4 shadow-xl border border-slate-100 z-20"
+                            >
+                                <p className="text-navy font-black text-2xl">500+</p>
+                                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest">Active Volunteers</p>
+                            </motion.div>
                         </div>
+                    </FadeIn>
 
-                        <div className="w-full lg:w-1/2">
-                            <FadeIn direction="left" delay={0.2}>
-                                <div className="relative">
-                                    {/* Abstract Shapes */}
-                                    <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
-                                    <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-navy/20 rounded-full blur-[120px] pointer-events-none" />
+                    {/* RIGHT — Form / CTA area */}
+                    <FadeIn direction="left" delay={0.2}>
+                        {/* Ghost heading behind */}
+                        <div className="relative">
+                            <span className="absolute -top-8 right-0 text-[8rem] font-black text-slate-50 tracking-tighter leading-none pointer-events-none select-none">
+                                Join
+                            </span>
 
-                                    <div className="relative aspect-[4/5.5] rounded-[999px] overflow-hidden shadow-[0_60px_120px_-30px_rgba(0,0,0,0.6)] transform lg:rotate-2 group-hover:rotate-0 transition-transform duration-1000 border-2 border-white/10">
-                                        <img
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcw8wxpYcYBRL5pXLzflekN0ZSeDZgXPZfP8prs4flNveXRQbXpOwb7I_-2nWDe0cBH3uYJrzYMnjbe1ISIDCgp4VNeM_Lr6i7W3Yet-UvfotldMpB9XlfbSq7Y4ral-63I4O9ZEnQAZg-UJ20y79euxrFznquIVxmYyixWzFSli6fYmnGmNs2BUByUTNMzAobC6Ggrnw1wbiXKhv0QuDrVb6_5kH15OME7yobzgFIkZejAP-QF18TbX2UKHqUxcS8qu7-YYwqRI8"
-                                            alt="Volunteers with children"
-                                            className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-all duration-1000"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
+                            <p className="text-slate-400 font-black uppercase tracking-[0.3em] text-[10px] mb-3 relative">
+                                Community First
+                            </p>
 
-                                        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 p-10 rounded-[3rem] bg-white shadow-premium backdrop-blur-md w-full max-w-[320px] border border-slate-100 transform -rotate-2 group-hover:rotate-0 transition-all duration-700">
-                                            <div className="flex items-center gap-5 mb-4">
-                                                <div className="size-12 rounded-full bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/30">
-                                                    <Heart className="w-6 h-6 fill-current" />
-                                                </div>
-                                                <p className="text-navy font-black text-lg italic tracking-tighter leading-none">"Impactful."</p>
-                                            </div>
-                                            <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">— Sarah J., Volunteer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </FadeIn>
+                            <h2 className="text-navy text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4 relative">
+                                Join the <span className="text-primary italic">Movement.</span>
+                            </h2>
+
+                            <p className="text-slate-500 text-base leading-relaxed mb-8 max-w-md relative">
+                                Let's take Cameroon's education and humanitarian mission to the next level — together. Share your skills and change a child's future.
+                            </p>
+
+                            {/* Mini form */}
+                            <div className="space-y-4 mb-8 relative">
+                                <input
+                                    type="text"
+                                    placeholder="Your Name *"
+                                    className="w-full px-5 py-4 border border-slate-200 rounded-2xl text-navy font-medium placeholder-slate-400 focus:outline-none focus:border-primary transition-colors text-sm"
+                                />
+                                <input
+                                    type="email"
+                                    placeholder="Your Email *"
+                                    className="w-full px-5 py-4 border border-slate-200 rounded-2xl text-navy font-medium placeholder-slate-400 focus:outline-none focus:border-primary transition-colors text-sm"
+                                />
+                                <textarea
+                                    placeholder="How would you like to help? ..."
+                                    rows={3}
+                                    className="w-full px-5 py-4 border border-slate-200 rounded-2xl text-navy font-medium placeholder-slate-400 focus:outline-none focus:border-primary transition-colors resize-none text-sm"
+                                />
+                            </div>
+
+                            <div className="flex flex-wrap gap-4 relative">
+                                <button className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white font-black text-sm uppercase tracking-widest rounded-2xl hover:bg-primary/90 hover:scale-105 transition-all shadow-xl shadow-primary/30">
+                                    Get in Touch <ArrowRight className="w-4 h-4" />
+                                </button>
+                                <Link
+                                    to="/volunteer"
+                                    className="inline-flex items-center gap-3 px-8 py-4 border-2 border-navy text-navy font-black text-sm uppercase tracking-widest rounded-2xl hover:bg-navy hover:text-white transition-all"
+                                >
+                                    Learn More
+                                </Link>
+                            </div>
                         </div>
-                    </div>
+                    </FadeIn>
                 </div>
             </div>
         </section>
