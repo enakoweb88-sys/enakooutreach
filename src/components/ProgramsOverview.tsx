@@ -1,103 +1,141 @@
 import { Link } from 'react-router-dom';
 import FadeIn from './FadeIn';
+import { GraduationCap, Droplets, Award, Heart, HeartHandshake, Zap, ArrowRight, CheckCircle } from 'lucide-react';
 
 const programDetails = [
     {
         id: 'scholarships',
-        badge: '2024 Academic Year',
+        badge: 'Education Support',
         title: 'Scholarships for Academic Excellence',
-        desc: 'Our program identifies and supports the top-5-students from underserved communities, fostering the next generation of African leaders through a rigorous merit-based selection process and comprehensive annual awards.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBf36m3k6OIJWgQJnMGVHWXJXz5cQVL1FU4mVwbkZ5l0IJarktCFr78ZR2kFmSnxpLVENEXKCAzIinLHE3H4oJFe6MmOPVzf9Sik8nUO7XFujIqsGExm87DQ6IYXM45-r69fvInAFBKOgXq11jSQyWEiNlqZIPMDGjG3dHfzJG7HiwNHQsD_FdNQRIKQ3jVvAbfG4Nxq-bxOK6GRatjfJbshyF7L44Q1JjqjCiQE5QAIHXRXjhUjQAOa9cE2-vn2LOqAYlDCvPOkE',
-        highlights: ['Merit-based Selection', 'Annual Awards', 'Educational Support'],
-        stats: ['150+ Schools Partnered', '2.4k Applications Yearly', '98% Graduation Rate', '12 Countries Targeted'],
-        imageCaption: '+500 Scholars Supported',
+        desc: 'Our flagship scholarship programme provides full-tuition coverage, textbooks, uniforms, and mentorship for high-achieving students from low-income families across Cameroon. We support students from primary level through to university.',
+        image: '/assets/images/scholarship-success.png',
+        icon: <GraduationCap className="w-6 h-6 text-blue-600" />,
+        highlights: ['Full Tuition Coverage', 'Mentorship Program', 'Primary to University'],
+        stats: ['1,200+ Scholars', '97% Graduation', '35+ Schools', '6 Regions'],
+        imageCaption: 'Empowering future leaders',
     },
     {
-        id: 'teacher-awards',
-        badge: 'Recognition Program',
-        title: 'Teacher Excellence Awards',
-        desc: 'Recognizing and rewarding outstanding educators who demonstrate commitment to student success and pedagogical innovation. We believe great teachers are the foundation of great communities.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBKWMGcVwFYUe-lACRbwLg0aey91CJPqM5sShYGA6Brmd7AF8A3O3pqIqyqsw6PpZL4bMXokYm7yttOMQvGY7329YvjfhuKxkzc5V2TKdpKMg4dNUqJ6NbjVIcbp2Aq3OTaC8R9qshcngnhqImNqTMkIfRCo5AEEsxzi6vE8xfcTba9Ngm9D46GlrEvP5yhE8_eb3MR6oaAambK6lQ2oofxonzNahHWUbNWxz9CvfXwxZ06k4okzg8ExCUuv4PrzqD1wjYCrgLK2Zc',
-        highlights: ['Annual Awards Ceremony', 'Financial Grants', 'Professional Development'],
-        stats: ['450+ Teachers Rewarded', '12 Countries', '100% Community Voted', 'XAF 500 Average Grant'],
-        imageCaption: 'Teachers across Africa',
+        id: 'clean-water-initiative',
+        badge: 'Infrastructure',
+        title: 'Clean Water Initiative',
+        desc: 'Providing safe, accessible drinking water to rural and water-scarce communities through borehole drilling, water purification systems, and local maintenance training. We believe clean water is the first step to health.',
+        image: 'https://images.unsplash.com/photo-1541544537156-7627a7a4aa1c?w=1000&q=80',
+        icon: <Droplets className="w-6 h-6 text-cyan-600" />,
+        highlights: ['Borehole Drilling', 'Water Purification', 'Maintenance Training'],
+        stats: ['18 Boreholes', '28k+ People', '22 Villages', '3 Regions'],
+        imageCaption: 'Safe water for every village',
     },
     {
-        id: 'community',
-        badge: 'Development Initiative',
-        title: 'Community Development',
-        desc: 'Investing in sustainable infrastructure and local initiatives to foster long-term growth within rural African communities. From solar power to clean water, we build the foundations for thriving villages.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA0D42cGvlYkLGdY3Pyp7nz-KaP3VV6UPlGjinq-S7S6a4Arr-3zmJCevxHP7pswwOm0vZC1anWyer2TwCYBDPL0XAN_PcFTFcW2T0W9IKytjETMkyRGl397af6EKKoQMi0zstLUmREEuurpP46enI208yrXJn4br0_ZmSofXYzty42SaLMIZvnlGbIxHiXN4V3v1MKEweoMIp_wZdUcYITheMR8YeuoaTzs707dR1PH7HAyRLzWn6h8Nx53YONQRjpw5qPnEv0jZA',
-        highlights: ['Solar Energy Projects', 'Clean Water Systems', 'Infrastructure Building'],
-        stats: ['85+ Communities', '120 Projects', '12 Countries', '50k+ Beneficiaries'],
-        imageCaption: 'Community projects across Africa',
+        id: 'teacher-rewards',
+        badge: 'Teacher Excellence',
+        title: 'Teacher Rewards Programme',
+        desc: 'Recognising and rewarding dedicated educators in underserved communities. We provide financial grants, professional development, and community recognition to those who go above and beyond for their students.',
+        image: '/assets/images/teacher-excellence.png',
+        icon: <Award className="w-6 h-6 text-amber-600" />,
+        highlights: ['Financial Grants', 'Professional Training', 'Peer Network'],
+        stats: ['220+ Teachers', '8 Regions', '3.2k+ Training hrs', '100% Nominated'],
+        imageCaption: 'Honouring dedicated educators',
     },
     {
-        id: 'orphanage',
-        badge: 'Child Welfare',
-        title: 'Orphanage Support',
-        desc: 'Ensuring vulnerable children receive the care, nutrition, and educational foundation they need to thrive in a safe environment. Every child deserves a future full of hope and possibility.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcw8wxpYcYBRL5pXLzflekN0ZSeDZgXPZfP8prs4flNveXRQbXpOwb7I_-2nWDe0cBH3uYJrzYMnjbe1ISIDCgp4VNeM_Lr6i7W3Yet-UvfotldMpB9XlfbSq7Y4ral-63I4O9ZEnQAZg-UJ20y79euxrFznquIVxmYyixWzFSli6fYmnGmNs2BUByUTNMzAobC6Ggrnw1wbiXKhv0QuDrVb6_5kH15OME7yobzgFIkZejAP-QF18TbX2UKHqUxcS8qu7-YYwqRI8',
-        highlights: ['Safe Housing', 'Nutrition Programs', 'Education Access'],
-        stats: ['200+ Children Supported', '15 Orphanages', '100% Non-profit', '12 Countries'],
-        imageCaption: 'Children in safe care',
+        id: 'community-health-support',
+        badge: 'Healthcare',
+        title: 'Community Health Support',
+        desc: 'Mobile healthcare clinics and medical outreach programs that bring doctors, nurses, and essential medication directly to families in remote and underserved areas of Cameroon.',
+        image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=1000&q=80',
+        icon: <Heart className="w-6 h-6 text-red-600" />,
+        highlights: ['Mobile Clinics', 'Maternal Health', 'Malaria Prevention'],
+        stats: ['42k+ Patients', '6 Clinics', '85 Trained', '5 Regions'],
+        imageCaption: 'Healthcare within reach',
+    },
+    {
+        id: 'single-mothers-assistance',
+        badge: 'Social Support',
+        title: 'Single Mothers Assistance',
+        desc: 'Empowering single mothers and widows through micro-grants, vocational skills training (tailoring, catering, ICT), trauma counselling, and childcare support to foster economic independence.',
+        image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1000&q=80',
+        icon: <HeartHandshake className="w-6 h-6 text-purple-600" />,
+        highlights: ['Micro-grants', 'Skills Training', 'Trauma Support'],
+        stats: ['480+ Women', '320+ Businesses', '95% Employed', '5 Regions'],
+        imageCaption: 'Restoring hope and dignity',
+    },
+    {
+        id: 'youth-empowerment',
+        badge: 'Youth Development',
+        title: 'Youth Empowerment Programme',
+        desc: 'Building the next generation of Cameroonian changemakers through leadership development, vocational skills training, digital literacy bootcamps, and seed funding for young entrepreneurs.',
+        image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1000&q=80',
+        icon: <Zap className="w-6 h-6 text-green-600" />,
+        highlights: ['Leadership Training', 'Digital Skills', 'Seed Funding'],
+        stats: ['650+ Youth', '95 Businesses', '73% Employed', '4 Regions'],
+        imageCaption: 'Building tomorrow\'s leaders',
     },
 ];
 
 const ProgramsOverview = () => {
     return (
         <section className="py-20 px-6 lg:px-20 bg-transparent overflow-hidden">
-            <div className="max-w-7xl mx-auto space-y-24">
+            <div className="max-w-7xl mx-auto space-y-32">
                 {programDetails.map((prog, idx) => (
                     <div
                         key={prog.id}
-                        className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-16`}
+                        className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-20`}
                     >
-                        {/* Image */}
-                        <div className="lg:w-1/2 relative w-full">
+                        {/* Image side */}
+                        <div className="lg:w-1/2 relative w-full group">
                             <FadeIn direction={idx % 2 === 0 ? "right" : "left"}>
-                                <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] w-full">
-                                    <img src={prog.image} alt={prog.title} className="w-full h-full object-cover" />
-                                    <div className="absolute inset-0 bg-navy   " />
-                                    <div className="absolute bottom-6 left-6 bg-white backdrop-blur-sm rounded-xl px-5 py-3">
-                                        <p className="text-navy font-bold text-sm">{prog.imageCaption}</p>
+                                <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] w-full">
+                                    <img src={prog.image} alt={prog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    {/* Overlay badge */}
+                                    <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 flex items-center gap-3">
+                                        <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shadow-inner">
+                                            {prog.icon}
+                                        </div>
+                                        <div>
+                                            <p className="text-slate-900 font-black text-sm leading-none">{prog.imageCaption}</p>
+                                            <p className="text-green-600 text-[10px] font-bold uppercase tracking-widest mt-1">Enako Impact</p>
+                                        </div>
                                     </div>
                                 </div>
                             </FadeIn>
                         </div>
-                        {/* Content */}
+
+                        {/* Content side */}
                         <div className="lg:w-1/2 flex flex-col gap-6 w-full">
                             <FadeIn direction={idx % 2 === 0 ? "left" : "right"}>
-                                <span className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-primary border border-primary text-primary text-xs font-bold uppercase tracking-widest w-fit">
+                                <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-green-50 text-green-700 text-xs font-black uppercase tracking-[0.2em] border border-green-100">
                                     {prog.badge}
                                 </span>
-                                <h2 className="text-navy text-3xl lg:text-4xl font-extrabold leading-tight mt-4">
+                                <h2 className="text-slate-900 text-3xl lg:text-5xl font-black leading-tight mt-4">
                                     {prog.title}
                                 </h2>
-                                <p className="text-slate-600 text-lg leading-relaxed mt-4">{prog.desc}</p>
-                                <div className="space-y-3 mt-4">
-                                    <p className="font-bold text-navy text-sm">Program Highlights</p>
+                                <p className="text-slate-500 text-lg leading-relaxed mt-4 font-medium">
+                                    {prog.desc}
+                                </p>
+                                
+                                <div className="grid sm:grid-cols-2 gap-4 mt-6">
                                     {prog.highlights.map((h) => (
-                                        <div key={h} className="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-100">
-                                            <span className="material-symbols-outlined text-primary text-lg">check_circle</span>
-                                            <span className="text-navy text-sm font-medium">{h}</span>
+                                        <div key={h} className="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-100 group hover:bg-white hover:border-green-200 hover:shadow-lg transition-all duration-300">
+                                            <CheckCircle className="text-green-600 w-5 h-5 flex-shrink-0" />
+                                            <span className="text-slate-800 text-sm font-bold">{h}</span>
                                         </div>
                                     ))}
                                 </div>
-                                <div className="grid grid-cols-2 gap-4 pt-4 mt-2">
+
+                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-100 mt-4">
                                     {prog.stats.map((s) => (
-                                        <div key={s} className="text-center py-3 bg-white rounded-lg border border-slate-100">
-                                            <p className="text-primary text-lg font-extrabold">{s.split(' ')[0]}</p>
-                                            <p className="text-slate-500 text-xs">{s.split(' ').slice(1).join(' ')}</p>
+                                        <div key={s} className="text-left">
+                                            <p className="text-green-600 text-xl font-black leading-none mb-1">{s.split(' ')[0]}</p>
+                                            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-wider">{s.split(' ').slice(1).join(' ')}</p>
                                         </div>
                                     ))}
                                 </div>
-                                <div className="flex gap-4 pt-4">
-                                    <Link to="/school-registration" className="flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-primary text-white font-bold hover:bg-primary transition-all text-sm">
-                                        Apply Now <span className="material-symbols-outlined text-base">arrow_forward</span>
+
+                                <div className="flex flex-wrap gap-4 pt-8">
+                                    <Link to={`/programs/${prog.id}`} className="flex items-center justify-center gap-2 rounded-xl h-14 px-8 bg-green-600 text-white font-bold hover:bg-green-700 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-green-600/20 text-sm">
+                                        View Full Programme <ArrowRight className="w-4 h-4" />
                                     </Link>
-                                    <Link to="/impact" className="flex items-center justify-center rounded-lg h-12 px-8 border border-slate-200 text-navy font-black text-[10px] uppercase tracking-widest hover:bg-slate-50 transition-all shadow-sm">
-                                        Learn More
+                                    <Link to="/donate" className="flex items-center justify-center rounded-xl h-14 px-8 border-2 border-slate-200 text-slate-800 font-bold hover:bg-slate-50 transition-all text-sm">
+                                        Donate Now
                                     </Link>
                                 </div>
                             </FadeIn>
